@@ -1,0 +1,1247 @@
+{
+  "anchor_count": 37,
+  "anchors": [
+    {
+      "anchor_id": "roster-item",
+      "block_entity_id": null,
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "type-roster",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "isolated exact type texture and core",
+      "position": {
+        "x": 196,
+        "y": 100,
+        "z": 196
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "roster-fluid",
+      "block_entity_id": null,
+      "block_id": "pipez:fluid_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "type-roster",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "isolated exact type texture and core",
+      "position": {
+        "x": 202,
+        "y": 100,
+        "z": 196
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "roster-energy",
+      "block_entity_id": null,
+      "block_id": "pipez:energy_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "type-roster",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "isolated exact type texture and core",
+      "position": {
+        "x": 208,
+        "y": 100,
+        "z": 196
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "roster-universal",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "type-roster",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "isolated exact type texture and core",
+      "position": {
+        "x": 214,
+        "y": 100,
+        "z": 196
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "roster-gas",
+      "block_entity_id": null,
+      "block_id": "pipez:gas_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "type-roster",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "isolated exact type texture and core",
+      "position": {
+        "x": 220,
+        "y": 100,
+        "z": 196
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-item-north-end",
+      "block_entity_id": null,
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 196,
+        "y": 100,
+        "z": 204
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-item-middle",
+      "block_entity_id": null,
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 196,
+        "y": 100,
+        "z": 205
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-item-south-end",
+      "block_entity_id": null,
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 196,
+        "y": 100,
+        "z": 206
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-fluid-north-end",
+      "block_entity_id": null,
+      "block_id": "pipez:fluid_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 202,
+        "y": 100,
+        "z": 204
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-fluid-middle",
+      "block_entity_id": null,
+      "block_id": "pipez:fluid_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 202,
+        "y": 100,
+        "z": 205
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-fluid-south-end",
+      "block_entity_id": null,
+      "block_id": "pipez:fluid_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 202,
+        "y": 100,
+        "z": 206
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-energy-north-end",
+      "block_entity_id": null,
+      "block_id": "pipez:energy_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 208,
+        "y": 100,
+        "z": 204
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-energy-middle",
+      "block_entity_id": null,
+      "block_id": "pipez:energy_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 208,
+        "y": 100,
+        "z": 205
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-energy-south-end",
+      "block_entity_id": null,
+      "block_id": "pipez:energy_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 208,
+        "y": 100,
+        "z": 206
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-universal-north-end",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 214,
+        "y": 100,
+        "z": 204
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-universal-middle",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 214,
+        "y": 100,
+        "z": 205
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-universal-south-end",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 214,
+        "y": 100,
+        "z": 206
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-gas-north-end",
+      "block_entity_id": null,
+      "block_id": "pipez:gas_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 220,
+        "y": 100,
+        "z": 204
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-gas-middle",
+      "block_entity_id": null,
+      "block_id": "pipez:gas_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 220,
+        "y": 100,
+        "z": 205
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "straight-gas-south-end",
+      "block_entity_id": null,
+      "block_id": "pipez:gas_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "straight-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "same-type persisted north/south topology",
+      "position": {
+        "x": 220,
+        "y": 100,
+        "z": 206
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "six-way-center",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "true",
+        "east": "true",
+        "has_data": "false",
+        "north": "true",
+        "south": "true",
+        "up": "true",
+        "waterlogged": "false",
+        "west": "true"
+      },
+      "case_id": "six-way-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "all six ordinary arm rotations on one center",
+      "position": {
+        "x": 232,
+        "y": 102,
+        "z": 210
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "six-way-arm-down",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "six-way-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "universal down arm endpoint",
+      "position": {
+        "x": 232,
+        "y": 101,
+        "z": 210
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "six-way-arm-up",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "true",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "six-way-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "universal up arm endpoint",
+      "position": {
+        "x": 232,
+        "y": 103,
+        "z": 210
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "six-way-arm-north",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "six-way-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "universal north arm endpoint",
+      "position": {
+        "x": 232,
+        "y": 102,
+        "z": 209
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "six-way-arm-south",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "six-way-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "universal south arm endpoint",
+      "position": {
+        "x": 232,
+        "y": 102,
+        "z": 211
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "six-way-arm-west",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "true",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "six-way-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "universal west arm endpoint",
+      "position": {
+        "x": 231,
+        "y": 102,
+        "z": 210
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "six-way-arm-east",
+      "block_entity_id": null,
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "true"
+      },
+      "case_id": "six-way-topology",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "universal east arm endpoint",
+      "position": {
+        "x": 233,
+        "y": 102,
+        "z": 210
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms"
+      ]
+    },
+    {
+      "anchor_id": "extractor-down",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "true",
+        "east": "false",
+        "has_data": "true",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "extractor-faces",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "ExtractingSides": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "notes": "one persisted extractor plate on the down face",
+      "position": {
+        "x": 196,
+        "y": 102,
+        "z": 224
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "extractor-plates"
+      ]
+    },
+    {
+      "anchor_id": "extractor-up",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "true",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "extractor-faces",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "ExtractingSides": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "notes": "one persisted extractor plate on the up face",
+      "position": {
+        "x": 204,
+        "y": 102,
+        "z": 224
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "extractor-plates"
+      ]
+    },
+    {
+      "anchor_id": "extractor-north",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "true",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "extractor-faces",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "ExtractingSides": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "notes": "one persisted extractor plate on the north face",
+      "position": {
+        "x": 212,
+        "y": 102,
+        "z": 224
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "extractor-plates"
+      ]
+    },
+    {
+      "anchor_id": "extractor-south",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "true",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "extractor-faces",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "ExtractingSides": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "notes": "one persisted extractor plate on the south face",
+      "position": {
+        "x": 220,
+        "y": 102,
+        "z": 224
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "extractor-plates"
+      ]
+    },
+    {
+      "anchor_id": "extractor-west",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "true",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "true"
+      },
+      "case_id": "extractor-faces",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "ExtractingSides": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "notes": "one persisted extractor plate on the west face",
+      "position": {
+        "x": 228,
+        "y": 102,
+        "z": 224
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "extractor-plates"
+      ]
+    },
+    {
+      "anchor_id": "extractor-east",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "true",
+        "has_data": "true",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "extractor-faces",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "ExtractingSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "notes": "one persisted extractor plate on the east face",
+      "position": {
+        "x": 236,
+        "y": 102,
+        "z": 224
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "extractor-plates"
+      ]
+    },
+    {
+      "anchor_id": "extractor-multi",
+      "block_entity_id": "pipez:universal_pipe",
+      "block_id": "pipez:universal_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "true",
+        "has_data": "true",
+        "north": "true",
+        "south": "false",
+        "up": "true",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "multi-extractor",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "ExtractingSides": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      "notes": "three stable extractor plates compose without transient flow",
+      "position": {
+        "x": 196,
+        "y": 102,
+        "z": 236
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "extractor-plates"
+      ]
+    },
+    {
+      "anchor_id": "disconnected-west",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "true",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "persisted-disconnection",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "ExtractingSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "notes": "adjacent same-type pair with east connection disabled",
+      "position": {
+        "x": 210,
+        "y": 102,
+        "z": 236
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "persisted-disconnection"
+      ]
+    },
+    {
+      "anchor_id": "disconnected-east",
+      "block_entity_id": "pipez:item_pipe",
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "true",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "false",
+        "west": "false"
+      },
+      "case_id": "persisted-disconnection",
+      "expected_route": "custom",
+      "nbt": {
+        "DisconnectedSides": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "ExtractingSides": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "notes": "adjacent same-type pair with west connection disabled",
+      "position": {
+        "x": 211,
+        "y": 102,
+        "z": 236
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "persisted-disconnection"
+      ]
+    },
+    {
+      "anchor_id": "waterlogged-item",
+      "block_entity_id": null,
+      "block_id": "pipez:item_pipe",
+      "blockstate": {
+        "down": "false",
+        "east": "false",
+        "has_data": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "waterlogged": "true",
+        "west": "false"
+      },
+      "case_id": "waterlogged",
+      "expected_route": "custom",
+      "nbt": {},
+      "notes": "BlueMap outer renderer supplies the stock water overlay",
+      "position": {
+        "x": 224,
+        "y": 102,
+        "z": 236
+      },
+      "stable_optics": [
+        "type-texture",
+        "core",
+        "connected-arms",
+        "stock-waterlogged-overlay"
+      ]
+    }
+  ],
+  "baseline": {
+    "minecraft": "1.21.1",
+    "pack": "All the Mons 1.2.0",
+    "pipez": "1.21.1-1.2.31"
+  },
+  "schema_version": 1
+}

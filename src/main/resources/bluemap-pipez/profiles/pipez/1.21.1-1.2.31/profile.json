@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "profileId": "pipez",
+  "modId": "pipez",
+  "version": "1.21.1-1.2.31",
+  "artifact": "pipez-neoforge-1.21.1-1.2.31.jar",
+  "sizeBytes": 456599,
+  "sha1": "a5671f7e8d38dfc092ace4091250e8f9e1245e1e",
+  "sha256": "9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f",
+  "sha512": "7291230b62104b73b04564d6d39ba18d11134a5713ee79242c7ae8885d07c4efb5f5d0ab75b8ff9aba3119ed8163d0c5488ad603a2db21b92dc35715b723ce5e",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.248",
+  "coverage": {
+    "blockCount": 5,
+    "supportedBlocks": [
+      "pipez:energy_pipe",
+      "pipez:fluid_pipe",
+      "pipez:gas_pipe",
+      "pipez:item_pipe",
+      "pipez:universal_pipe"
+    ],
+    "stableVisuals": [
+      "per-type core and connected arms from exact multipart blockstates",
+      "persisted per-face extractor plates",
+      "waterlogged stock overlay"
+    ],
+    "excluded": [
+      "transported items, fluids, energy, and gas",
+      "upgrade inventory and configuration",
+      "activity and transfer timing"
+    ],
+    "camouflage": "not implemented by the exact Pipez artifact"
+  },
+  "blockstate": {
+    "requiredProperties": [
+      "down",
+      "up",
+      "north",
+      "south",
+      "west",
+      "east",
+      "has_data",
+      "waterlogged"
+    ],
+    "directionOrder": [
+      "down",
+      "up",
+      "north",
+      "south",
+      "west",
+      "east"
+    ]
+  },
+  "blockEntity": {
+    "stableFields": {
+      "ExtractingSides": "TAG_List<TAG_Byte>; first six entries in directionOrder",
+      "DisconnectedSides": "TAG_List<TAG_Byte>; topology consistency only"
+    },
+    "ignoredFields": [
+      "Upgrades"
+    ]
+  },
+  "rotations": {
+    "arms": {
+      "down": [90, 0, 0],
+      "up": [270, 0, 0],
+      "north": [0, 0, 0],
+      "south": [0, 180, 0],
+      "west": [0, 270, 0],
+      "east": [0, 90, 0]
+    },
+    "extractors": {
+      "down": [90, 0, 0],
+      "up": [270, 0, 0],
+      "north": [0, 0, 0],
+      "south": [0, 180, 0],
+      "west": [0, 270, 0],
+      "east": [0, 90, 0]
+    },
+    "extractorOutwardOffsetBlocks": 0.001
+  },
+  "resourceClosure": {
+    "manifest": "required-resources.tsv",
+    "pathCount": 28,
+    "resourceBytes": 9737,
+    "manifestSha256": "3b1776ff9eb80dbbf3d20fa132793ef6fcf3cdb871ba3a3d400bf8218b44336c"
+  }
+}

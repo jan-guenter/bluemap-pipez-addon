@@ -1,0 +1,16 @@
+# Notices
+
+Copyright 2026 Jan Guenter. This project is licensed under the MIT License.
+
+This is an unofficial community add-on. It is not affiliated with or endorsed
+by BlueMap, Max Henkel, CurseForge, Modrinth, NeoForged, Mojang, Microsoft, or
+the All the Mons project.
+
+The implementation is independently written against observed runtime
+interfaces and resource formats. No Pipez, Minecraft, NeoForge, or BlueMap
+binary or asset is included. No upstream Pipez source or asset is copied or
+adapted into this project.
+
+Names, identifiers, version strings, file sizes, resource paths, and
+cryptographic digests are used only to describe compatibility and verify
+operator-installed artifacts.

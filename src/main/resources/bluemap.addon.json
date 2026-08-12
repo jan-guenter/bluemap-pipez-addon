@@ -1,0 +1,6 @@
+{
+  "id": "bluemap-pipez",
+  "entrypoint": "io.github.janguenter.bluemap.pipez.BlueMapPipezAddon",
+  "dependencies": [],
+  "soft-dependencies": []
+}

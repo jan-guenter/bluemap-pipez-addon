@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "baseline": {
+    "pack": "All the Mons",
+    "packVersion": "1.2.0",
+    "packRepositoryCommit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.248",
+    "java": 21
+  },
+  "requiredForStaticRendering": [
+    "pipez"
+  ],
+  "artifacts": [
+    {
+      "modId": "pipez",
+      "metadataVersion": "1.21.1-1.2.31",
+      "filename": "pipez-neoforge-1.21.1-1.2.31.jar",
+      "sizeBytes": 456599,
+      "sha1": "a5671f7e8d38dfc092ace4091250e8f9e1245e1e",
+      "sha256": "9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f",
+      "sha512": "7291230b62104b73b04564d6d39ba18d11134a5713ee79242c7ae8885d07c4efb5f5d0ab75b8ff9aba3119ed8163d0c5488ad603a2db21b92dc35715b723ce5e",
+      "license": "All rights reserved",
+      "curseForgeProjectId": 443900,
+      "curseForgeFileId": 8351631,
+      "curseForgeFingerprint": 411466094,
+      "modrinthProjectId": "iRmWy6ga",
+      "modrinthVersionId": "BPGKb8pi",
+      "verificationRole": "required-static-render-input",
+      "sourceCorrelation": {
+        "status": "release-correlated-not-attested",
+        "repository": "https://github.com/henkelmax/pipez",
+        "branch": "1.21.1",
+        "commit": "91a01deda19e5beb19fe7840aa14daaa312aa212",
+        "method": "exact version bump, matching changelog and byte-identical resource closure after line-ending normalization",
+        "limitations": "no immutable source tag, build attestation, or reproducible-binary proof"
+      }
+    }
+  ]
+}

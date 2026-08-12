@@ -1,0 +1,66 @@
+# Architecture
+
+The release unit is one plain BlueMap add-on JAR for exact Pipez 1.2.31. It is
+not a NeoForge mod and never loads Minecraft's client renderer.
+
+```text
+BlueMap add-on entrypoint
+        |
+exact BlueMap 5.22 internal-ABI adapter
+        |
+exact Pipez artifact size/SHA-256 gate
+        |
+five exact block and block-entity IDs
+        |
+strict blockstate + six-byte-list snapshot
+        |
+stock installed core/arm models + installed extractor model
+        |
+atomic original-resource fallback
+```
+
+## Activation and failure boundary
+
+The single route begins inactive. It activates only when BlueMap's resource
+roots contain exactly one JAR declaring `pipez` with the exact size and
+SHA-256. The resource extension then requires the five multipart blockstates,
+18 model keys, five texture keys, and one valid synthetic dispatch model.
+
+Only while active are the five exact blockstate IDs redirected. Registry
+collisions, an artifact mismatch, or an incomplete resource closure leave the
+route inactive. A renderer invariant failure marks the route failed for the
+rest of the process. A malformed individual block uses stock fallback without
+poisoning other blocks.
+
+## Rendering model
+
+The six directional blockstate booleans are the persisted connection topology.
+BlueMap's ordinary resource renderer draws each type's installed core and the
+matching rotated arms. This preserves stock JSON semantics and avoids any
+capability or neighboring-machine discovery during map rendering.
+
+When `has_data=true`, BlueMap's registered block-entity projection reads only
+`ExtractingSides` and `DisconnectedSides`. They are NBT lists of bytes indexed
+`DOWN, UP, NORTH, SOUTH, WEST, EAST`. Pipez treats a missing or short list as
+all false and any nonzero byte as true. `DisconnectedSides` is retained for
+validation/diagnostics; visible arm topology remains authoritative in the
+blockstate.
+
+For each extracting side, the renderer emits the installed per-type
+`*_pipe_extract` JSON model with the exact client rotations and a 0.001-block
+outward offset. Extraction is intentionally independent of the corresponding
+arm boolean because the exact client renderer has that behavior. BlueMap's
+outer blockstate renderer supplies water for `waterlogged=true` after the
+custom variant completes.
+
+Before custom output, the renderer records the tile-model and map-color start.
+Any failed decode or emission resets partial geometry and invokes the raw
+installed Pipez blockstate through BlueMap's stock renderer. No half-custom
+block remains.
+
+## Resource ownership
+
+The production JAR owns only its entrypoint, adapter/renderer code, synthetic
+dispatch blockstate, exact profile facts, and resource path/size/hash manifest.
+BlueMap and all Minecraft/Pipez resources remain operator supplied. This keeps
+the project clean-room MIT despite Pipez's All-rights-reserved declaration.
