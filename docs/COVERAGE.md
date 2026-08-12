@@ -32,3 +32,7 @@ connection masks without expanding the owner-facing gallery.
 
 Malformed observations use atomic stock fallback. No partial extractor
 geometry remains in the tile model.
+
+The owner accepted this bounded stable-optics scope on 2026-08-12 after
+comparing the corrected extractor-face result in Minecraft and BlueMap. That
+acceptance does not extend to the deliberately excluded transient state.

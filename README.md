@@ -7,8 +7,7 @@ Pipez connections and extractor plates.
 
 ## Status and compatibility
 
-Version `0.1.0-alpha.1` is an implementation candidate prepared for one
-environment. It is not a released or visually accepted build yet:
+Version `0.1.0-alpha.1` is the owner-accepted prerelease for one environment:
 
 - All the Mons `1.2.0`, Minecraft `1.21.1`, NeoForge `21.1.248`, Java `21`;
 - BlueMap backport `5.22-agent.backport-5.22-mc1.21.1-2` at
@@ -19,6 +18,12 @@ environment. It is not a released or visually accepted build yet:
 The runtime activates only for those exact Pipez bytes. A same-named or
 same-version file with a different size or SHA-256 remains on BlueMap's stock
 resource path.
+
+The accepted production JAR is 53,921 bytes with SHA-256
+`e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db`.
+Its corrected extractor-face mapping passed pull-request CI, the single
+37-anchor staging gate, and owner comparison between Minecraft and BlueMap on
+2026-08-12.
 
 ## Visual scope
 

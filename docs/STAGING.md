@@ -53,3 +53,18 @@ bounded review map `pipez_staging`.
 This enabled pass is the release staging gate. A separate stock comparison,
 rollback lifecycle, transient-flow gallery, or legacy 1.1.1 run is not
 required.
+
+## Accepted result
+
+The owner accepted the corrected result on 2026-08-12. The exact staged
+production JAR was 53,921 bytes with SHA-256
+`e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db`.
+It loaded exactly once without a targeted fault, the deterministic gallery
+verified 37/37 anchors, and the bounded purge/render completed. A subsequent
+clean exit-0 restart again loaded exactly one add-on and reached BlueMap's
+loaded state without a targeted fault. The agent browser sanity check passed
+before owner inspection. The owner then compared the corrected extractor
+faces in Minecraft and BlueMap and approved the visual result.
+
+The disposable world, map, screenshots, and runtime logs may now be replaced
+by the next accepted add-on cycle under the shared staging policy.

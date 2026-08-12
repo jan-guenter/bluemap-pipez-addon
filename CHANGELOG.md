@@ -12,3 +12,8 @@ All notable changes will be documented here.
   camouflage state.
 - Add exact artifact/resource verification, atomic stock fallback, CI/release
   workflows, and a deterministic 37-anchor review gallery.
+- Correct the BlueMap resource-space rotations for extractor plates on the
+  up, down, east, and west faces after direct Minecraft/BlueMap comparison.
+- Record owner acceptance of the exact 53,921-byte production JAR with
+  SHA-256
+  `e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db`.

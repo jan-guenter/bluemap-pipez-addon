@@ -21,7 +21,7 @@ Run `python3 generate.py` to regenerate tracked manifests/functions, or
 `./package.sh /absolute/output/pipez-gallery.zip`, then use
 `function pipez_gallery:build` and `function pipez_gallery:verify` on staging.
 
-This gallery has not yet received owner visual acceptance. The disposable
-world, rendered map, screenshots, and logs may replace evidence from already
-accepted add-ons. Do not commit third-party resources, world data, or client
-captures.
+The owner accepted the corrected extractor-face result on 2026-08-12 after
+comparing Minecraft and BlueMap directly. The disposable world, rendered map,
+screenshots, and logs may now be replaced by the next add-on cycle. Do not
+commit third-party resources, world data, or client captures.
