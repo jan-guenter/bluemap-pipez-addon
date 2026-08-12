@@ -70,12 +70,12 @@
       "east": [0, 90, 0]
     },
     "extractors": {
-      "down": [270, 0, 0],
-      "up": [90, 0, 0],
+      "down": [90, 0, 0],
+      "up": [270, 0, 0],
       "north": [0, 0, 0],
       "south": [0, 180, 0],
-      "west": [0, 90, 0],
-      "east": [0, 270, 0]
+      "west": [0, 270, 0],
+      "east": [0, 90, 0]
     },
     "extractorOutwardOffsetBlocks": 0.001
   },

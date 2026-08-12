@@ -154,13 +154,13 @@ class PipeSnapshotDecoderTest {
     }
 
     @Test
-    void directionTablesMatchExactMultipartAndBerRotations() {
-        assertDirection(PipeDirection.DOWN, 0, 90F, 0F, 270F, 0F);
-        assertDirection(PipeDirection.UP, 1, 270F, 0F, 90F, 0F);
+    void directionTablesMatchExactMultipartAndBlueMapEquivalentRotations() {
+        assertDirection(PipeDirection.DOWN, 0, 90F, 0F, 90F, 0F);
+        assertDirection(PipeDirection.UP, 1, 270F, 0F, 270F, 0F);
         assertDirection(PipeDirection.NORTH, 2, 0F, 0F, 0F, 0F);
         assertDirection(PipeDirection.SOUTH, 3, 0F, 180F, 0F, 180F);
-        assertDirection(PipeDirection.WEST, 4, 0F, 270F, 0F, 90F);
-        assertDirection(PipeDirection.EAST, 5, 0F, 90F, 0F, 270F);
+        assertDirection(PipeDirection.WEST, 4, 0F, 270F, 0F, 270F);
+        assertDirection(PipeDirection.EAST, 5, 0F, 90F, 0F, 90F);
     }
 
     private static Map<String, String> properties(boolean hasData) {

@@ -11,6 +11,7 @@ import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.Varian
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.VariantSet;
 import de.bluecolored.bluemap.core.util.Key;
 import de.bluecolored.bluemap.core.util.math.Color;
+import de.bluecolored.bluemap.core.util.math.VectorM3f;
 import io.github.janguenter.bluemap.pipez.model.PipeDirection;
 import io.github.janguenter.bluemap.pipez.model.PipeType;
 import org.junit.jupiter.api.Test;
@@ -34,20 +35,41 @@ class PipezRendererMappingTest {
     }
 
     @Test
-    void everyExtractorFaceUsesTheExactClientBerRotation() {
-        assertEquals(List.of(270F, 0F, 0F),
-                PipezRenderer.extractorRotation(PipeDirection.DOWN));
+    void everyExtractorFaceUsesTheBlueMapEquivalentOfTheExactClientRotation() {
         assertEquals(List.of(90F, 0F, 0F),
+                PipezRenderer.extractorRotation(PipeDirection.DOWN));
+        assertEquals(List.of(270F, 0F, 0F),
                 PipezRenderer.extractorRotation(PipeDirection.UP));
         assertEquals(List.of(0F, 0F, 0F),
                 PipezRenderer.extractorRotation(PipeDirection.NORTH));
         assertEquals(List.of(0F, 180F, 0F),
                 PipezRenderer.extractorRotation(PipeDirection.SOUTH));
-        assertEquals(List.of(0F, 90F, 0F),
-                PipezRenderer.extractorRotation(PipeDirection.WEST));
         assertEquals(List.of(0F, 270F, 0F),
+                PipezRenderer.extractorRotation(PipeDirection.WEST));
+        assertEquals(List.of(0F, 90F, 0F),
                 PipezRenderer.extractorRotation(PipeDirection.EAST));
         assertEquals(0.001F, PipezRenderer.EXTRACTOR_OFFSET);
+    }
+
+    @Test
+    void everyNativeNorthExtractorModelLandsOnItsRequestedWorldFace() {
+        for (PipeDirection direction : PipeDirection.values()) {
+            Variant transform = new Variant(
+                    ResourcePack.MISSING_BLOCK_MODEL,
+                    direction.extractorXRotation(),
+                    direction.extractorYRotation(),
+                    0F
+            );
+            VectorM3f center = new VectorM3f(0.5F, 0.5F, 0F)
+                    .transform(transform.getTransformMatrix());
+
+            assertEquals(0.5F + 0.5F * direction.stepX(), center.x, 0.00001F,
+                    direction.property());
+            assertEquals(0.5F + 0.5F * direction.stepY(), center.y, 0.00001F,
+                    direction.property());
+            assertEquals(0.5F + 0.5F * direction.stepZ(), center.z, 0.00001F,
+                    direction.property());
+        }
     }
 
     @Test

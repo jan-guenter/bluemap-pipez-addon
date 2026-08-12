@@ -3,14 +3,14 @@
  */
 package io.github.janguenter.bluemap.pipez.model;
 
-/** Exact Pipez 1.2.31 direction order and model rotations. */
+/** Exact Pipez 1.2.31 direction order and BlueMap resource-space rotations. */
 public enum PipeDirection {
-    DOWN("down", 0, 90F, 0F, 270F, 0F, 0, -1, 0),
-    UP("up", 1, 270F, 0F, 90F, 0F, 0, 1, 0),
+    DOWN("down", 0, 90F, 0F, 90F, 0F, 0, -1, 0),
+    UP("up", 1, 270F, 0F, 270F, 0F, 0, 1, 0),
     NORTH("north", 2, 0F, 0F, 0F, 0F, 0, 0, -1),
     SOUTH("south", 3, 0F, 180F, 0F, 180F, 0, 0, 1),
-    WEST("west", 4, 0F, 270F, 0F, 90F, -1, 0, 0),
-    EAST("east", 5, 0F, 90F, 0F, 270F, 1, 0, 0);
+    WEST("west", 4, 0F, 270F, 0F, 270F, -1, 0, 0),
+    EAST("east", 5, 0F, 90F, 0F, 90F, 1, 0, 0);
 
     private final String property;
     private final int nbtIndex;
