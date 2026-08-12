@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "project_license": "MIT",
+  "implementation_lane": "clean-room-runtime-interface-and-resource-format",
+  "baseline": {
+    "pack": "All the Mons 1.2.0",
+    "pack_commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.248",
+    "java": 21
+  },
+  "bluemap": {
+    "backport_version": "5.22-agent.backport-5.22-mc1.21.1-2",
+    "backport_commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "release_jar_sha256": "749f7647fa29764cea113114a7ab3259271bab3da22720989f2bd9fd1f3ba150",
+    "declared_license": "MIT",
+    "bundled": false
+  },
+  "first_party_template": {
+    "repository": "https://github.com/jan-guenter/bluemap-sophisticated-addon",
+    "commit": "a75b1d82c3987fa9360a1e8a5910eedf90aca7cb",
+    "declared_license": "MIT",
+    "reuse": "repository, build, release, BlueMap adapter and JSON-emission mechanics only; no Sophisticated profile, family state, resources, or observations"
+  },
+  "artifacts": {
+    "pipez": {
+      "version": "1.21.1-1.2.31",
+      "file_name": "pipez-neoforge-1.21.1-1.2.31.jar",
+      "size": 456599,
+      "sha1": "a5671f7e8d38dfc092ace4091250e8f9e1245e1e",
+      "sha256": "9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f",
+      "sha512": "7291230b62104b73b04564d6d39ba18d11134a5713ee79242c7ae8885d07c4efb5f5d0ab75b8ff9aba3119ed8163d0c5488ad603a2db21b92dc35715b723ce5e",
+      "curseforge_project_id": 443900,
+      "curseforge_file_id": 8351631,
+      "curseforge_fingerprint": 411466094,
+      "modrinth_project_id": "iRmWy6ga",
+      "modrinth_version_id": "BPGKb8pi",
+      "declared_license": "All rights reserved",
+      "bundled": false
+    }
+  },
+  "source_correlation": {
+    "repository": "https://github.com/henkelmax/pipez",
+    "branch": "1.21.1",
+    "commit": "91a01deda19e5beb19fe7840aa14daaa312aa212",
+    "status": "release-correlated-not-attested",
+    "license_lane": "factual inspection only; source not copied or adapted"
+  },
+  "historical_discovery": {
+    "all_the_mons_1_1_1": "discovery hint only; not evidence for this profile"
+  }
+}
