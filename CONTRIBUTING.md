@@ -16,4 +16,9 @@ camouflage feature.
 
 Submit one complete change and rely on the pull-request gate instead of
 repeating full local builds after every edit. The authoritative command is in
-[AGENTS.md](AGENTS.md).
+[AGENTS.md](AGENTS.md). Clone with `--recurse-submodules`, or initialize an
+existing checkout with:
+
+```bash
+git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+```

@@ -38,6 +38,7 @@ Develop in one coherent tranche. Pull-request CI is the authoritative full
 build and exact-input gate; do not repeat it locally after small edits:
 
 ```bash
+git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
 gradle --no-daemon \
   -PpipezJar=/absolute/path/pipez-neoforge-1.21.1-1.2.31.jar \
   clean check build generatePomFileForAddonPublication \
