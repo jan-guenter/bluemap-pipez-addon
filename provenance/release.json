@@ -1,63 +1,103 @@
 {
   "schema_version": 1,
-  "status": "owner-accepted-release-candidate",
-  "version": "0.1.0-alpha.2",
+  "status": "unpublished-migration-candidate",
+  "version": "0.1.0-alpha.3",
   "release_date": "2026-08-30",
   "repository": "https://github.com/jan-guenter/bluemap-pipez-addon",
-  "tag": "v0.1.0-alpha.2",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-pipez-addon:0.1.0-alpha.2",
-  "owner_accepted_baseline": {
-    "version": "0.1.0-alpha.1",
-    "release_commit": "fa3e773a7d1b7e9af52277bf104e70f704b0bb2a",
-    "production_jar_size": 53921,
-    "production_jar_sha256": "e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db",
-    "gallery_archive_size": 3504,
-    "gallery_archive_sha256": "08f1de94a139ae0910a755cdcdf9f59c4c3faef03f00cdbbce91b7532245efd2",
-    "visual_acceptance": true
+  "tag": "v0.1.0-alpha.3",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-pipez-addon:0.1.0-alpha.3",
+  "published": false,
+  "inherited_visual_acceptance": {
+    "baseline_version": "0.1.0-alpha.2",
+    "baseline_release_commit": "8b14c6ff8fff48ebf74dc87430184d522f37bf96",
+    "baseline_production_jar_size": 55373,
+    "baseline_production_jar_sha256": "73d27be8dac93b1cccd619ed0bc560847e636b175199ae1a8509b092228384c3",
+    "original_owner_accepted_version": "0.1.0-alpha.1",
+    "original_visual_acceptance": true,
+    "scope": "The exact Pipez profile, gallery, decoder, renderer, geometry, routing and fallback are unchanged. Alpha.3 moves the adapter boundary and shared face-light source to their BlueMap 5.23-only packages."
   },
-  "final_release_artifacts": {
+  "candidate_artifacts": {
     "production_jar": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.jar",
-      "size": 55373,
-      "sha256": "73d27be8dac93b1cccd619ed0bc560847e636b175199ae1a8509b092228384c3"
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.jar",
+      "size": 57846,
+      "sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d"
     },
     "sources_jar": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2-sources.jar",
-      "size": 31288,
-      "sha256": "27ca39580b4dc84fe2215137db31e282449595456176c399f2efee89f9e679a9"
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3-sources.jar",
+      "size": 33629,
+      "sha256": "bbbf4cf549545b3a71e78ead4795a64e0feda9a131545cef97594b75c879d2c9"
     },
     "pom": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.pom",
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.pom",
       "size": 1339,
-      "sha256": "8d970a81c7b811661707ad3ddd116cde4a814872cce505798e927d3f76ddf84a"
+      "sha256": "6b2cad4528e7cf2541d93f3ba42e9fd949778d26042caf38155a734f44447046"
     },
     "gradle_module": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.module.json",
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.module.json",
       "size": 2803,
-      "sha256": "cebe346c50698a0e4aa2b2a4126eb457bc2090cebf87b4763fd3178df847c287"
+      "sha256": "8ffffc52d83ea6990256da6b0d6936236f413102ce404c2c1b70eca1e7b2e4dd"
     },
     "sha256sums": {
       "file_name": "SHA256SUMS",
       "size": 440,
-      "sha256": "6a5c3edb86142b05d64033e19932e89d47c650aeb9d593dd8f57ad0c1a5d6985"
+      "sha256": "ac19a8f3d01d9954f30cb4b12515c2b3f504f01b93db8f6c18f37ae538aa4390"
     }
   },
-  "render_core_module_migration": {
-    "baseline_version": "0.1.0-alpha.1",
-    "repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
-    "version": "0.1.0-alpha.1",
-    "tag": "v0.1.0-alpha.1",
-    "commit": "faf53c9586a2c876b5a91db5ae3c2650a98f19ba",
-    "source_tree": "73870b3976ad3a17bf4bf350d9531b66d3d4a3af",
-    "normalized_face_lighting_bytecode_exact": true,
-    "package_normalized_caller_bytecode_exact": true,
-    "gallery_byte_identical": true,
-    "behavior_change": false
+  "exact_feature_backport_migration": {
+    "bluemap_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "bluemap_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "bluemap_api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "tested_neoforge_jar_size": 6545661,
+    "tested_neoforge_jar_sha256": "86a0323d24f472e425dda4d4e6bba2d7d8ce8315ad009930a67131128c715e62",
+    "local_adapter_package": "io.github.janguenter.bluemap.pipez.adapter.bluemap523",
+    "former_local_adapter_package_present": false,
+    "former_runtime_identity_accepted": false
+  },
+  "render_core_523_migration": {
+    "module_repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
+    "module_version": "0.1.0-alpha.2",
+    "module_tag": "v0.1.0-alpha.2",
+    "module_release_commit": "24b84efdc8235f3f1323e1a8e9fd033080e3a79e",
+    "module_source_tree": "424040931680fb82d37693f893ca887c0ed48eae",
+    "compiled_source_count": 1,
+    "source_package": "io.github.janguenter.bluemap.addon.render.core.adapter.bluemap523",
+    "standalone_module_jar_bundled": false,
+    "standalone_module_jar_installed": false
+  },
+  "adapter_api_source": {
+    "module_repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
+    "module_version": "0.1.0-alpha.2",
+    "module_tag": "v0.1.0-alpha.2",
+    "module_release_commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "module_source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "compiled_source_count": 4,
+    "replaced_local_helpers": [
+      "AdapterCompatibility",
+      "registry admission methods",
+      "PipezResourceExtensionType",
+      "synthetic dispatch validation"
+    ],
+    "standalone_module_jar_bundled": false,
+    "standalone_module_jar_installed": false
+  },
+  "preserved_contract": {
+    "routed_block_count": 5,
+    "block_entity_registration_count": 5,
+    "gallery_sources_changed": false,
+    "normalized_local_renderer_bytecode_exact": true,
+    "common_non_adapter_archive_bytes_exact": true,
+    "runtime_profile_and_renderer_behavior_changed": false,
+    "consumer_tests_passed": 21
   },
   "verification": {
     "exact_input_gate": true,
-    "archive_boundary_gate": true,
-    "same_toolchain_reproducibility": true,
-    "module_trust_probes": true
+    "production_archive_boundary_gate": true,
+    "sources_archive_boundary_gate": true,
+    "adapter_api_source_boundary_gate": true,
+    "render_core_source_boundary_gate": true,
+    "exact_feature_backport_runtime_identity_gate": true,
+    "gradle_9_4_clean_builds": 2,
+    "same_toolchain_reproducibility_files": 4,
+    "hostile_gitlink_trust_probes": true
   }
 }
