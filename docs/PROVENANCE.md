@@ -40,10 +40,13 @@ ordinary JSON emitter were seeded from this owner's independently authored MIT
 family-specific decoder/renderer/catalog, resource fact, or observation was
 carried into Pipez.
 
-Version `0.1.0-alpha.2` source-bundles the unchanged `FaceLighting` class from
-the first-party MIT `bluemap-addon-render-core` `0.1.0-alpha.1` release at
-commit `faf53c9586a2c876b5a91db5ae3c2650a98f19ba`, source tree
-`73870b3976ad3a17bf4bf350d9531b66d3d4a3af`. The module records the canonical
-Sophisticated origin and all seven byte-identical portfolio copies. Its JAR is
-neither installed nor nested. Pipez profile facts, decoding, geometry,
-routing, and fallback remain local.
+Version `0.1.0-alpha.3` source-bundles `FaceLighting` from the first-party MIT
+`bluemap-addon-render-core` `0.1.0-alpha.2` release at commit
+`24b84efdc8235f3f1323e1a8e9fd033080e3a79e`, source tree
+`424040931680fb82d37693f893ca887c0ed48eae`. That release moves the helper to
+the 5.23-only package without changing its behavior. The build also compiles
+the four bootstrap helpers from `bluemap-addon-adapter-api` `0.1.0-alpha.2` at
+commit `e81f08bc4bfbf02d810ec8949a019130e2e61634`, source tree
+`2f974c9bb2ba13888d69682f86f30f58922d30eb`. Neither module JAR is installed
+or nested. Pipez profile facts, decoding, geometry, routing, and fallback
+remain local.

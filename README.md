@@ -2,17 +2,18 @@
 
 [![CI](https://github.com/jan-guenter/bluemap-pipez-addon/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jan-guenter/bluemap-pipez-addon/actions/workflows/ci.yml)
 
-An exact-profile BlueMap 5.22 add-on for the stable world appearance of
+An exact-profile BlueMap 5.23 feature-backport add-on for the stable world appearance of
 Pipez connections and extractor plates.
 
 ## Status and compatibility
 
-Version `0.1.0-alpha.2` is a source-consolidation candidate for the same exact
-environment as the owner-accepted `0.1.0-alpha.1` release:
+Version `0.1.0-alpha.3` migrates the owner-accepted Pipez renderer to the sole
+active BlueMap 5.23 feature-backport target:
 
 - All the Mons `1.2.0`, Minecraft `1.21.1`, NeoForge `21.1.248`, Java `21`;
-- BlueMap backport `5.22-agent.backport-5.22-mc1.21.1-2` at
-  `9be321df995a1103808621d529eb72773e719d4d`;
+- BlueMap feature backport
+  `5.22-feature.backport-5.23-stateless-java-web-server-46` at
+  `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`;
 - Pipez `1.21.1-1.2.31`, exact 456,599-byte JAR with SHA-256
   `9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f`.
 
@@ -26,10 +27,35 @@ Its corrected extractor-face mapping passed pull-request CI, the single
 37-anchor staging gate, and owner comparison between Minecraft and BlueMap on
 2026-08-12.
 
-The candidate changes source ownership only. It compiles transformed-face
-light sampling from the commit-pinned `bluemap-addon-render-core` source
-module. Pipe decoding, model emission, routing, fallback, and installed
-resource use remain local and unchanged.
+The alpha.3 production JAR is 57,846 bytes with SHA-256
+`6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d`.
+Two clean Gradle 9.4.0 builds produced the same production JAR, sources JAR,
+POM, and module metadata bytes.
+
+On 2026-08-30, the owner accepted the visual result in the combined 51-add-on
+BlueMap gallery. That run used the exact alpha.3 JAR as its base, then replaced
+the entrypoint class with an integration-instrumented version. The staged JAR
+was 57,893 bytes with SHA-256
+`70ffe682fb5319aadb5519a5846804a50cabbd0d86436542b4d2f3adbb75f149`.
+That review alone did not prove that the exact production JAR passed the
+runtime gate. A separate bounded check then installed the exact 57,846-byte
+production JAR. It loaded once without an inactive-profile or stock-fallback
+marker, and its manual gallery verification reported zero failures. All 12
+freshly rendered high-resolution Pipez tiles, including the four tiles
+exclusive to Pipez, matched the accepted overlay byte for byte in compressed
+and decoded form.
+
+That exact-artifact check used one boot. It did not weaken or rerun the full
+51-marker suite because the production entrypoint intentionally has no test
+marker. It binds instead to the immediately preceding passing two-boot 51/51
+integration suite. See [staging](docs/STAGING.md) and
+[release provenance](provenance/release.json) for the retained evidence hashes.
+
+The candidate compiles transformed-face lighting from Render Core
+`0.1.0-alpha.2` and the four registry/runtime/extension helpers from Adapter
+API `0.1.0-alpha.2`. Pipe decoding, model emission, routing, fallback, and
+installed resource use remain local and unchanged. No `bluemap522` production
+package remains.
 
 ## Visual scope
 
@@ -73,12 +99,13 @@ render-core source module before running Gradle:
 
 ```bash
 git submodule update --init --recursive -- \
-  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core \
+  modules/bluemap-addon-adapter-api
 ```
 
-The settings preflight accepts only the committed toolkit and render-core
-gitlinks. It rejects an uninitialized, changed, dirty, incorrectly pinned, or
-source-tree-mismatched checkout.
+The settings preflight accepts only the committed toolkit, render-core, and
+adapter API gitlinks. It rejects an uninitialized, changed, dirty, incorrectly
+pinned, or source-tree-mismatched checkout.
 
 ```bash
 gradle --no-daemon \
@@ -89,8 +116,8 @@ gradle --no-daemon \
 
 Pull-request CI reacquires the JAR ephemerally from its exact Modrinth version,
 verifies every digest, metadata, Java level, and 28-path resource closure, and
-discards it. The build compiles one first-party MIT render-core source and
-bundles no module JAR or Pipez bytes.
+discards it. The build compiles one first-party MIT render-core source and four
+first-party MIT adapter API sources. It bundles no module JAR or Pipez bytes.
 
 Tagged releases publish production/source JARs, POM, module metadata, and
 checksums on GitHub Releases and at Maven coordinates

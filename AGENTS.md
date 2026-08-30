@@ -10,8 +10,10 @@ not part of the root orchestration repository.
 | --- | --- |
 | All the Mons | `1.2.0`, pack commit `c7bb230f21d14d26859d0b92548f089b3a493ad9` |
 | Minecraft / NeoForge / Java | `1.21.1` / `21.1.248` / `21` |
-| BlueMap | backport `5.22-agent.backport-5.22-mc1.21.1-2`, commit `9be321df995a1103808621d529eb72773e719d4d` |
+| BlueMap | feature backport `5.22-feature.backport-5.23-stateless-java-web-server-46`, commit `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac` |
 | Pipez | `pipez-neoforge-1.21.1-1.2.31.jar`, 456,599 bytes, SHA-256 `9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f` |
+| Render Core | `0.1.0-alpha.2`, commit `24b84efdc8235f3f1323e1a8e9fd033080e3a79e`, source tree `424040931680fb82d37693f893ca887c0ed48eae` |
+| Adapter API | `0.1.0-alpha.2`, commit `e81f08bc4bfbf02d810ec8949a019130e2e61634`, source tree `2f974c9bb2ba13888d69682f86f30f58922d30eb` |
 
 Do not treat the version string alone as compatibility proof. A new pack or
 mod file is a fresh evidence, implementation, and review task.
@@ -21,8 +23,8 @@ mod file is a fresh evidence, implementation, and review task.
 - The production JAR is a plain BlueMap add-on loaded from BlueMap's packs
   directory. It contains no NeoForge metadata, Mixins, nested JARs, client
   bootstrap, or third-party classes/assets. It compiles the exact pinned
-  first-party render-core source into the add-on instead of nesting or
-  installing the module JAR.
+  first-party render-core and adapter API sources into the add-on instead of
+  nesting or installing either module JAR.
 - The exact five-block catalog is `item_pipe`, `fluid_pipe`, `energy_pipe`,
   `universal_pipe`, and `gas_pipe` in the `pipez` namespace.
 - Preserve stable cores, connected arms, persisted extractor plates,
@@ -41,7 +43,8 @@ build and exact-input gate; do not repeat it locally after small edits:
 
 ```bash
 git submodule update --init --recursive -- \
-  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core \
+  modules/bluemap-addon-adapter-api
 gradle --no-daemon \
   -PpipezJar=/absolute/path/pipez-neoforge-1.21.1-1.2.31.jar \
   clean check build generatePomFileForAddonPublication \

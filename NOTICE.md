@@ -16,6 +16,10 @@ Transformed-face light sampling compiles from the owner's MIT-licensed
 implementation to the owner's BlueMap Sophisticated Add-on. No module JAR is
 installed or nested.
 
+Runtime identity, registry, resource extension, and synthetic dispatch helpers
+compile from the owner's MIT-licensed `bluemap-addon-adapter-api` source
+module. Its module JAR is also neither installed nor nested.
+
 Names, identifiers, version strings, file sizes, resource paths, and
 cryptographic digests are used only to describe compatibility and verify
 operator-installed artifacts.

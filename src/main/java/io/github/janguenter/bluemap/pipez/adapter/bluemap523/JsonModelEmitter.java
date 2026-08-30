@@ -4,7 +4,7 @@
  * Model emission follows BlueMap's MIT-licensed resource-model coordinate and
  * UV conventions. It emits only operator-installed Pipez JSON resources.
  */
-package io.github.janguenter.bluemap.pipez.adapter.bluemap522;
+package io.github.janguenter.bluemap.pipez.adapter.bluemap523;
 
 import com.flowpowered.math.vector.Vector3f;
 import com.flowpowered.math.vector.Vector4f;
@@ -22,7 +22,7 @@ import de.bluecolored.bluemap.core.util.Direction;
 import de.bluecolored.bluemap.core.util.Key;
 import de.bluecolored.bluemap.core.util.math.MatrixM4f;
 import de.bluecolored.bluemap.core.world.block.BlockNeighborhood;
-import io.github.janguenter.bluemap.addon.render.core.adapter.bluemap522.FaceLighting;
+import io.github.janguenter.bluemap.addon.render.core.adapter.bluemap523.FaceLighting;
 
 /** Emits one already-baked ordinary JSON model without family resource copies. */
 final class JsonModelEmitter {

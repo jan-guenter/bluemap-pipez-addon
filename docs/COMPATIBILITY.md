@@ -8,7 +8,7 @@ Compatibility is intentionally exact and evidence-locked.
 | Minecraft | `1.21.1` |
 | NeoForge | `21.1.248` |
 | Java | `21` |
-| BlueMap | upstream `5.22` at `fe5115d5548a30d34175b8e0449aaca280af199f`, or exact ATM backport at `9be321df995a1103808621d529eb72773e719d4d` |
+| BlueMap | feature backport `5.22-feature.backport-5.23-stateless-java-web-server-46` at `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`, API commit `285c9a60eff3ac2b0cab308ce1058d1565be0971` |
 | Pipez | `pipez-neoforge-1.21.1-1.2.31.jar`, 456,599 bytes, SHA-1 `a5671f7e8d38dfc092ace4091250e8f9e1245e1e`, SHA-256 `9b37e922443ea3452daeacbfba4bcf69de07692183c4ee09f1d1e82c9fc5cc5f` |
 
 The All the Mons client manifest identifies CurseForge project/file

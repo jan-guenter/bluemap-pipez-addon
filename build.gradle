@@ -16,6 +16,7 @@ base {
 
 sourceSets {
     main.java.srcDir 'modules/bluemap-addon-render-core/src/main/java'
+    main.java.srcDir 'modules/bluemap-addon-adapter-api/src/main/java'
 }
 
 repositories {
@@ -90,7 +91,7 @@ tasks.named('sourcesJar', Jar).configure {
 def productionJar = tasks.named('jar', Jar).flatMap { it.archiveFile }
 def publishedSourcesJar = tasks.named('sourcesJar', Jar).flatMap { it.archiveFile }
 def sharedRenderCorePackage =
-        'io/github/janguenter/bluemap/addon/render/core/adapter/bluemap522/'
+        'io/github/janguenter/bluemap/addon/render/core/adapter/bluemap523/'
 def sharedRenderCoreClasses = [
         "${sharedRenderCorePackage}FaceLighting.class",
         "${sharedRenderCorePackage}FaceLighting\$Sample.class"
@@ -98,12 +99,27 @@ def sharedRenderCoreClasses = [
 def sharedRenderCoreSources = [
         "${sharedRenderCorePackage}FaceLighting.java"
 ].collect { it.toString() }
-def legacyFaceLightingClasses = [
-        'io/github/janguenter/bluemap/pipez/adapter/bluemap522/FaceLighting.class',
-        'io/github/janguenter/bluemap/pipez/adapter/bluemap522/FaceLighting$Sample.class'
-]
-def legacyFaceLightingSources = [
-        'io/github/janguenter/bluemap/pipez/adapter/bluemap522/FaceLighting.java'
+def sharedAdapterApiPackage =
+        'io/github/janguenter/bluemap/addon/adapter/api/bluemap523/'
+def sharedAdapterApiClasses = [
+        'BlueMapRuntimeCompatibility.class',
+        'RegistryGuard.class',
+        'ResourceExtensionType.class',
+        'SyntheticDispatch.class'
+].collect { sharedAdapterApiPackage + it }
+def sharedAdapterApiSources = [
+        'BlueMapRuntimeCompatibility.java',
+        'RegistryGuard.java',
+        'ResourceExtensionType.java',
+        'SyntheticDispatch.java'
+].collect { sharedAdapterApiPackage + it }
+def legacyLocalAdapterPackage =
+        'io/github/janguenter/bluemap/pipez/adapter/bluemap522/'
+def legacySharedRenderCorePackage =
+        'io/github/janguenter/bluemap/addon/render/core/adapter/bluemap522/'
+def displacedAdapterHelpers = [
+        'io/github/janguenter/bluemap/pipez/adapter/bluemap523/AdapterCompatibility',
+        'io/github/janguenter/bluemap/pipez/adapter/bluemap523/PipezResourceExtensionType'
 ]
 tasks.register('verifyProductionJar') {
     dependsOn tasks.named('jar')
@@ -124,9 +140,11 @@ tasks.register('verifyProductionJar') {
                     'META-INF/NOTICE-bluemap-pipez-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-pipez-addon.md',
                     'META-INF/bluemap-pipez/upstreams.json'
-            ] + sharedRenderCoreClasses
+            ] + sharedRenderCoreClasses + sharedAdapterApiClasses
             def missing = required.findAll { !entries.contains(it) }
             def duplicateShared = sharedRenderCoreClasses.findAll { shared ->
+                entries.count { it == shared } != 1
+            } + sharedAdapterApiClasses.findAll { shared ->
                 entries.count { it == shared } != 1
             }
             if (!missing.isEmpty() || !duplicateShared.isEmpty()) {
@@ -148,6 +166,7 @@ tasks.register('verifyProductionJar') {
                 it.endsWith('.class')
                         && !it.startsWith('io/github/janguenter/bluemap/pipez/')
                         && !sharedRenderCoreClasses.contains(it)
+                        && !sharedAdapterApiClasses.contains(it)
             }
             def forbidden = entries.findAll {
                 it.endsWith('.jar')
@@ -159,9 +178,13 @@ tasks.register('verifyProductionJar') {
                         || it.startsWith('de/maxhenkel/')
                         || it.startsWith('net/minecraft/')
                         || it.startsWith('net/neoforged/')
-                        || legacyFaceLightingClasses.contains(it)
+                        || it.startsWith(legacyLocalAdapterPackage)
+                        || it.startsWith(legacySharedRenderCorePackage)
+                        || displacedAdapterHelpers.any { helper -> it.startsWith(helper) }
                         || (it.startsWith(sharedRenderCorePackage)
                             && !sharedRenderCoreClasses.contains(it))
+                        || (it.startsWith(sharedAdapterApiPackage)
+                            && !sharedAdapterApiClasses.contains(it))
             }
             if (!foreignClasses.isEmpty() || !forbidden.isEmpty()) {
                 throw new GradleException(
@@ -186,7 +209,7 @@ tasks.register('verifySourcesJar') {
             def entries = zip.entries().findAll { !it.directory }.collect { it.name }
             def required = [
                     'io/github/janguenter/bluemap/pipez/BlueMapPipezAddon.java',
-                    'io/github/janguenter/bluemap/pipez/adapter/bluemap522/PipezRenderer.java',
+                    'io/github/janguenter/bluemap/pipez/adapter/bluemap523/PipezRenderer.java',
                     'bluemap.addon.json',
                     'bluemap-pipez/profiles/exact-artifacts.json',
                     'bluemap-pipez/profiles/pipez/1.21.1-1.2.31/profile.json',
@@ -195,9 +218,11 @@ tasks.register('verifySourcesJar') {
                     'META-INF/NOTICE-bluemap-pipez-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-pipez-addon.md',
                     'META-INF/bluemap-pipez/upstreams.json'
-            ] + sharedRenderCoreSources
+            ] + sharedRenderCoreSources + sharedAdapterApiSources
             def missing = required.findAll { !entries.contains(it) }
             def duplicateShared = sharedRenderCoreSources.findAll { shared ->
+                entries.count { it == shared } != 1
+            } + sharedAdapterApiSources.findAll { shared ->
                 entries.count { it == shared } != 1
             }
             if (!missing.isEmpty() || !duplicateShared.isEmpty()) {
@@ -210,6 +235,7 @@ tasks.register('verifySourcesJar') {
             def foreignJava = projectJava.findAll {
                 !it.startsWith('io/github/janguenter/bluemap/pipez/')
                         && !sharedRenderCoreSources.contains(it)
+                        && !sharedAdapterApiSources.contains(it)
             }
             def forbidden = entries.findAll {
                 it.endsWith('.class')
@@ -219,9 +245,13 @@ tasks.register('verifySourcesJar') {
                         || it.startsWith('de/maxhenkel/')
                         || it.startsWith('net/minecraft/')
                         || it.startsWith('net/neoforged/')
-                        || legacyFaceLightingSources.contains(it)
+                        || it.startsWith(legacyLocalAdapterPackage)
+                        || it.startsWith(legacySharedRenderCorePackage)
+                        || displacedAdapterHelpers.any { helper -> it == "${helper}.java" }
                         || (it.startsWith(sharedRenderCorePackage)
                             && !sharedRenderCoreSources.contains(it))
+                        || (it.startsWith(sharedAdapterApiPackage)
+                            && !sharedAdapterApiSources.contains(it))
             }
             if (projectJava.isEmpty() || !foreignJava.isEmpty() || !forbidden.isEmpty()) {
                 throw new GradleException(

@@ -1,63 +1,217 @@
 {
   "schema_version": 1,
   "status": "owner-accepted-release-candidate",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "release_date": "2026-08-30",
   "repository": "https://github.com/jan-guenter/bluemap-pipez-addon",
-  "tag": "v0.1.0-alpha.2",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-pipez-addon:0.1.0-alpha.2",
-  "owner_accepted_baseline": {
-    "version": "0.1.0-alpha.1",
-    "release_commit": "fa3e773a7d1b7e9af52277bf104e70f704b0bb2a",
-    "production_jar_size": 53921,
-    "production_jar_sha256": "e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db",
-    "gallery_archive_size": 3504,
-    "gallery_archive_sha256": "08f1de94a139ae0910a755cdcdf9f59c4c3faef03f00cdbbce91b7532245efd2",
-    "visual_acceptance": true
+  "tag": "v0.1.0-alpha.3",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-pipez-addon:0.1.0-alpha.3",
+  "inherited_visual_acceptance": {
+    "baseline_version": "0.1.0-alpha.2",
+    "baseline_release_commit": "8b14c6ff8fff48ebf74dc87430184d522f37bf96",
+    "baseline_production_jar_size": 55373,
+    "baseline_production_jar_sha256": "73d27be8dac93b1cccd619ed0bc560847e636b175199ae1a8509b092228384c3",
+    "original_owner_accepted_version": "0.1.0-alpha.1",
+    "original_visual_acceptance": true,
+    "scope": "The exact Pipez profile, gallery, decoder, renderer, geometry, routing and fallback are unchanged. Alpha.3 moves the adapter boundary and shared face-light source to their BlueMap 5.23-only packages."
   },
   "final_release_artifacts": {
     "production_jar": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.jar",
-      "size": 55373,
-      "sha256": "73d27be8dac93b1cccd619ed0bc560847e636b175199ae1a8509b092228384c3"
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.jar",
+      "size": 57846,
+      "sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d"
     },
     "sources_jar": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2-sources.jar",
-      "size": 31288,
-      "sha256": "27ca39580b4dc84fe2215137db31e282449595456176c399f2efee89f9e679a9"
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3-sources.jar",
+      "size": 33629,
+      "sha256": "bbbf4cf549545b3a71e78ead4795a64e0feda9a131545cef97594b75c879d2c9"
     },
     "pom": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.pom",
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.pom",
       "size": 1339,
-      "sha256": "8d970a81c7b811661707ad3ddd116cde4a814872cce505798e927d3f76ddf84a"
+      "sha256": "6b2cad4528e7cf2541d93f3ba42e9fd949778d26042caf38155a734f44447046"
     },
     "gradle_module": {
-      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.module.json",
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.module.json",
       "size": 2803,
-      "sha256": "cebe346c50698a0e4aa2b2a4126eb457bc2090cebf87b4763fd3178df847c287"
+      "sha256": "8ffffc52d83ea6990256da6b0d6936236f413102ce404c2c1b70eca1e7b2e4dd"
     },
     "sha256sums": {
       "file_name": "SHA256SUMS",
       "size": 440,
-      "sha256": "6a5c3edb86142b05d64033e19932e89d47c650aeb9d593dd8f57ad0c1a5d6985"
+      "sha256": "ac19a8f3d01d9954f30cb4b12515c2b3f504f01b93db8f6c18f37ae538aa4390"
     }
   },
-  "render_core_module_migration": {
-    "baseline_version": "0.1.0-alpha.1",
-    "repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
-    "version": "0.1.0-alpha.1",
-    "tag": "v0.1.0-alpha.1",
-    "commit": "faf53c9586a2c876b5a91db5ae3c2650a98f19ba",
-    "source_tree": "73870b3976ad3a17bf4bf350d9531b66d3d4a3af",
-    "normalized_face_lighting_bytecode_exact": true,
-    "package_normalized_caller_bytecode_exact": true,
-    "gallery_byte_identical": true,
-    "behavior_change": false
+  "owner_accepted_combined_integration": {
+    "accepted_at": "2026-08-30",
+    "visual_acceptance": true,
+    "acceptance_scope": "The owner accepted the combined-gallery visual result produced by the instrumented entrypoint overlay. This does not assert that the exact production JAR was installed for the runtime or visual gate.",
+    "evidence_bundle": "bluemap-atmons-integration-20260830-pipez-523-native",
+    "tested_source_commit": "e7af5cf372face707187d8d9544a345dea1ed585",
+    "tested_source_tree": "7c46a66dcd24b0ee37a667fba3fcd9fcf3b87e45",
+    "base_release_candidate": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.jar",
+      "size": 57846,
+      "sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d",
+      "entrypoint_class_sha256": "9629f3c3bb92687807b8be21407d1df684bd9c762d0cd5ad7968439628575f6f"
+    },
+    "staged_visual_artifact": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.1.jar",
+      "size": 57893,
+      "sha256": "70ffe682fb5319aadb5519a5846804a50cabbd0d86436542b4d2f3adbb75f149",
+      "gate_mode": "local-native-523-entrypoint-overlay",
+      "replaced_class": "io/github/janguenter/bluemap/pipez/BlueMapPipezAddon.class",
+      "replaced_class_sha256": "b5220fc59f372c044d1e786f11df9f143568c73a1eff9fadcca387a8d6cc6f77",
+      "replacement_source_sha256": "ddcc07ba01e7ddc582aaed83e724d1f26b5742465785af5019c4321000505cb3",
+      "purpose": "Add integration install-result validation and an activation marker."
+    },
+    "exact_production_jar_runtime_gate": false,
+    "integration_summary": {
+      "file_size": 4282,
+      "sha256": "ecd77a581475a9c0322498d60c0e39ba60806b7689585aaf0287b57092d8494f",
+      "status": "passed",
+      "addon_count": 51,
+      "passed": 51,
+      "failed": 0
+    },
+    "candidate_override_lock_sha256": "8d879fdaf29484154f899e1b6c2774aa58391e7c09e8057c8a58b7b4fe5affff",
+    "candidate_manifest_sha256": "6d2e3dc69f2c1d4bed19211a6a37238b761088ee8e81d1ba1007927820427741",
+    "candidate_pack_inventory_sha256": "6e494c6c7ffdb0dbb9feec22fd97efdbae34befc5f0f2ae3b09e4c24ff6a9b4c",
+    "runtime_suite": {
+      "file_size": 75864,
+      "sha256": "5bd3a5d9183d333d46baf6539df26cc73c6eccabdce6a7e30ab98e54738d5b3a",
+      "first_boot_id": "b8d8b7ff-954b-4c91-895e-507ee8b03588",
+      "second_boot_id": "e38d9f3c-986c-46c1-bb10-291c39a5f16c",
+      "activation_markers_per_boot": 51,
+      "pipez_checks": 56,
+      "pipez_failures": 0
+    },
+    "runtime_attestation_sha256": "3c5dcb99092ef0b5398970feb17b9b2382cd43627e3a56205225619dbff148bb",
+    "render": {
+      "map_id": "atmons_integration",
+      "region_count": 4,
+      "fresh_tile_count": 589,
+      "fresh_tile_evidence_sha256": "c1ede06455f6ac2b6ac3c08113c349540e5fb4c4eadb562bbda7497a7fa85b4f",
+      "schedule_sha256": "8a5dfd0a9b0ee5df7b97f62065def5bf2de835c9895f150d26e8b2a24ca76a3a",
+      "agent_browser_sanity": true
+    }
+  },
+  "exact_production_staging": {
+    "status": "passed",
+    "tested_at": "2026-08-30",
+    "evidence_bundle": "bluemap-atmons-exact-pipez-production-20260830",
+    "summary": {
+      "file_name": "evidence/exact-production-summary.json",
+      "size": 6088,
+      "sha256": "dbf555d07c59e7023ca705b0acaf60717c985ec361297e80da96c13905d2bda1"
+    },
+    "evidence_manifest": {
+      "file_name": "SHA256SUMS",
+      "size": 13013,
+      "file_count": 109,
+      "sha256": "f8e455665f4fceb232dead396dee8d57fa54409173357cc0ead38ccf666de9e0",
+      "verified": true
+    },
+    "production_jar": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.jar",
+      "installed_file_name": "bluemap-pipez-addon-0.1.0-alpha.1.jar",
+      "size": 57846,
+      "sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d",
+      "on_disk_identity_passed": true
+    },
+    "runtime": {
+      "boot_id": "cdd39f0c-43ca-41c5-aa45-34db144628cb",
+      "single_boot": true,
+      "candidate_pack_count": 51,
+      "runtime_jar_count": 377,
+      "pipez_load_markers": 1,
+      "pipez_inactive_markers": 0,
+      "pipez_fallback_markers": 0,
+      "runtime_attestation_sha256": "135f2f319e6327d33009adea647318d001dd7f2fc17d88261856f61c4ad8f150"
+    },
+    "manual_gallery": {
+      "completion_score": 1,
+      "pre_verification_failures": 0,
+      "post_verification_failures": 0
+    },
+    "bounded_render_equivalence": {
+      "fresh_tile_count": 12,
+      "exclusive_pipez_tile_count": 4,
+      "accepted_overlay_inventory_sha256": "24fb4d25423cc14e6ca83246924938d51ea797bd155a4ce2d05ffdde2dfc2df8",
+      "exact_production_inventory_sha256": "24fb4d25423cc14e6ca83246924938d51ea797bd155a4ce2d05ffdde2dfc2df8",
+      "accepted_overlay_exclusive_inventory_sha256": "10fc994a237835a7d9190fbf670d916845ceaccec655637761bfce5397a37f1a",
+      "exact_production_exclusive_inventory_sha256": "10fc994a237835a7d9190fbf670d916845ceaccec655637761bfce5397a37f1a",
+      "compressed_and_decoded_prbm_byte_identical": true
+    },
+    "suite_boundary": {
+      "full_51_marker_suite_rerun": false,
+      "reason": "The exact production entrypoint intentionally has no integration marker, so the marker gate was not weakened or rerun.",
+      "bound_two_boot_suite_sha256": "0ae94aa1cbfe60231e569fdd4437d12b6ba286c01ab0d8958e8e498227cd8719",
+      "bound_two_boot_result": "51/51 passed, zero failed, skipped, unasserted or cleanup failures"
+    },
+    "remaining_artifact_or_render_gap": false
+  },
+  "exact_feature_backport_migration": {
+    "bluemap_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "bluemap_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "bluemap_api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "tested_neoforge_jar_size": 6545661,
+    "tested_neoforge_jar_sha256": "86a0323d24f472e425dda4d4e6bba2d7d8ce8315ad009930a67131128c715e62",
+    "local_adapter_package": "io.github.janguenter.bluemap.pipez.adapter.bluemap523",
+    "former_local_adapter_package_present": false,
+    "former_runtime_identity_accepted": false
+  },
+  "render_core_523_migration": {
+    "module_repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
+    "module_version": "0.1.0-alpha.2",
+    "module_tag": "v0.1.0-alpha.2",
+    "module_release_commit": "24b84efdc8235f3f1323e1a8e9fd033080e3a79e",
+    "module_source_tree": "424040931680fb82d37693f893ca887c0ed48eae",
+    "bluemap_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "bluemap_api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "compiled_source_count": 1,
+    "source_package": "io.github.janguenter.bluemap.addon.render.core.adapter.bluemap523",
+    "standalone_module_jar_bundled": false,
+    "standalone_module_jar_installed": false
+  },
+  "adapter_api_source": {
+    "module_repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
+    "module_version": "0.1.0-alpha.2",
+    "module_tag": "v0.1.0-alpha.2",
+    "module_release_commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "module_source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "compiled_source_count": 4,
+    "replaced_local_helpers": [
+      "AdapterCompatibility",
+      "registry admission methods",
+      "PipezResourceExtensionType",
+      "synthetic dispatch validation"
+    ],
+    "standalone_module_jar_bundled": false,
+    "standalone_module_jar_installed": false
+  },
+  "preserved_contract": {
+    "routed_block_count": 5,
+    "block_entity_registration_count": 5,
+    "gallery_sources_changed": false,
+    "normalized_local_renderer_bytecode_exact": true,
+    "common_non_adapter_archive_bytes_exact": true,
+    "runtime_profile_and_renderer_behavior_changed": false,
+    "consumer_tests_passed": 21
   },
   "verification": {
     "exact_input_gate": true,
-    "archive_boundary_gate": true,
-    "same_toolchain_reproducibility": true,
-    "module_trust_probes": true
+    "production_archive_boundary_gate": true,
+    "sources_archive_boundary_gate": true,
+    "adapter_api_source_boundary_gate": true,
+    "render_core_source_boundary_gate": true,
+    "exact_feature_backport_runtime_identity_gate": true,
+    "gradle_9_4_clean_builds": 2,
+    "same_toolchain_reproducibility_files": 4,
+    "hostile_gitlink_trust_probes": true,
+    "combined_integration_two_boot_gate": true,
+    "staged_overlay_owner_visual_acceptance": true,
+    "exact_production_jar_runtime_gate": true,
+    "exact_production_render_equivalence_gate": true
   }
 }
