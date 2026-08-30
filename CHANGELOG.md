@@ -16,6 +16,8 @@ All notable changes will be documented here.
   unchanged.
 - Record the combined 51-add-on, two-boot integration pass and owner visual
   acceptance of its instrumented entrypoint overlay.
+- Close the artifact gap with a separate exact-production-JAR boot, manual
+  gallery verification, and byte-identical bounded render comparison.
 
 ## 0.1.0-alpha.2 - 2026-08-30
 

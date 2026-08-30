@@ -37,8 +37,19 @@ BlueMap gallery. That run used the exact alpha.3 JAR as its base, then replaced
 the entrypoint class with an integration-instrumented version. The staged JAR
 was 57,893 bytes with SHA-256
 `70ffe682fb5319aadb5519a5846804a50cabbd0d86436542b4d2f3adbb75f149`.
-This visual acceptance does not claim that the exact production JAR passed the
-runtime gate.
+That review alone did not prove that the exact production JAR passed the
+runtime gate. A separate bounded check then installed the exact 57,846-byte
+production JAR. It loaded once without an inactive-profile or stock-fallback
+marker, and its manual gallery verification reported zero failures. All 12
+freshly rendered high-resolution Pipez tiles, including the four tiles
+exclusive to Pipez, matched the accepted overlay byte for byte in compressed
+and decoded form.
+
+That exact-artifact check used one boot. It did not weaken or rerun the full
+51-marker suite because the production entrypoint intentionally has no test
+marker. It binds instead to the immediately preceding passing two-boot 51/51
+integration suite. See [staging](docs/STAGING.md) and
+[release provenance](provenance/release.json) for the retained evidence hashes.
 
 The candidate compiles transformed-face lighting from Render Core
 `0.1.0-alpha.2` and the four registry/runtime/extension helpers from Adapter

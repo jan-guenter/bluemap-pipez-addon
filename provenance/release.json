@@ -96,6 +96,61 @@
       "agent_browser_sanity": true
     }
   },
+  "exact_production_staging": {
+    "status": "passed",
+    "tested_at": "2026-08-30",
+    "evidence_bundle": "bluemap-atmons-exact-pipez-production-20260830",
+    "summary": {
+      "file_name": "evidence/exact-production-summary.json",
+      "size": 6088,
+      "sha256": "dbf555d07c59e7023ca705b0acaf60717c985ec361297e80da96c13905d2bda1"
+    },
+    "evidence_manifest": {
+      "file_name": "SHA256SUMS",
+      "size": 13013,
+      "file_count": 109,
+      "sha256": "f8e455665f4fceb232dead396dee8d57fa54409173357cc0ead38ccf666de9e0",
+      "verified": true
+    },
+    "production_jar": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.jar",
+      "installed_file_name": "bluemap-pipez-addon-0.1.0-alpha.1.jar",
+      "size": 57846,
+      "sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d",
+      "on_disk_identity_passed": true
+    },
+    "runtime": {
+      "boot_id": "cdd39f0c-43ca-41c5-aa45-34db144628cb",
+      "single_boot": true,
+      "candidate_pack_count": 51,
+      "runtime_jar_count": 377,
+      "pipez_load_markers": 1,
+      "pipez_inactive_markers": 0,
+      "pipez_fallback_markers": 0,
+      "runtime_attestation_sha256": "135f2f319e6327d33009adea647318d001dd7f2fc17d88261856f61c4ad8f150"
+    },
+    "manual_gallery": {
+      "completion_score": 1,
+      "pre_verification_failures": 0,
+      "post_verification_failures": 0
+    },
+    "bounded_render_equivalence": {
+      "fresh_tile_count": 12,
+      "exclusive_pipez_tile_count": 4,
+      "accepted_overlay_inventory_sha256": "24fb4d25423cc14e6ca83246924938d51ea797bd155a4ce2d05ffdde2dfc2df8",
+      "exact_production_inventory_sha256": "24fb4d25423cc14e6ca83246924938d51ea797bd155a4ce2d05ffdde2dfc2df8",
+      "accepted_overlay_exclusive_inventory_sha256": "10fc994a237835a7d9190fbf670d916845ceaccec655637761bfce5397a37f1a",
+      "exact_production_exclusive_inventory_sha256": "10fc994a237835a7d9190fbf670d916845ceaccec655637761bfce5397a37f1a",
+      "compressed_and_decoded_prbm_byte_identical": true
+    },
+    "suite_boundary": {
+      "full_51_marker_suite_rerun": false,
+      "reason": "The exact production entrypoint intentionally has no integration marker, so the marker gate was not weakened or rerun.",
+      "bound_two_boot_suite_sha256": "0ae94aa1cbfe60231e569fdd4437d12b6ba286c01ab0d8958e8e498227cd8719",
+      "bound_two_boot_result": "51/51 passed, zero failed, skipped, unasserted or cleanup failures"
+    },
+    "remaining_artifact_or_render_gap": false
+  },
   "exact_feature_backport_migration": {
     "bluemap_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
     "bluemap_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
@@ -156,6 +211,7 @@
     "hostile_gitlink_trust_probes": true,
     "combined_integration_two_boot_gate": true,
     "staged_overlay_owner_visual_acceptance": true,
-    "exact_production_jar_runtime_gate": false
+    "exact_production_jar_runtime_gate": true,
+    "exact_production_render_equivalence_gate": true
   }
 }
