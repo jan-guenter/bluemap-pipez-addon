@@ -20,5 +20,6 @@ repeating full local builds after every edit. The authoritative command is in
 existing checkout with:
 
 ```bash
-git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core
 ```

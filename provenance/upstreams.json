@@ -47,6 +47,18 @@
     "status": "release-correlated-not-attested",
     "license_lane": "factual inspection only; source not copied or adapted"
   },
+  "shared_source_module": {
+    "project": "BlueMap Add-on Render Core",
+    "repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
+    "version": "0.1.0-alpha.1",
+    "tag": "v0.1.0-alpha.1",
+    "commit": "faf53c9586a2c876b5a91db5ae3c2650a98f19ba",
+    "source_tree": "73870b3976ad3a17bf4bf350d9531b66d3d4a3af",
+    "declared_license": "MIT",
+    "scope": "BlueMap 5.22 transformed-face lighting",
+    "integration": "exact gitlink-pinned source compiled into the consumer",
+    "artifact_bundled": false
+  },
   "historical_discovery": {
     "all_the_mons_1_1_1": "discovery hint only; not evidence for this profile"
   }
