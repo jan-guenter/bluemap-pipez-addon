@@ -14,6 +14,8 @@ All notable changes will be documented here.
   `bluemap523` package.
 - Keep the exact Pipez profile, gallery, renderer behavior, and stock fallback
   unchanged.
+- Record the combined 51-add-on, two-boot integration pass and owner visual
+  acceptance of the exact 57,846-byte release candidate.
 
 ## 0.1.0-alpha.2 - 2026-08-30
 

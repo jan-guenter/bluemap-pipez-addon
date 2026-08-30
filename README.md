@@ -27,7 +27,9 @@ Its corrected extractor-face mapping passed pull-request CI, the single
 37-anchor staging gate, and owner comparison between Minecraft and BlueMap on
 2026-08-12.
 
-The alpha.3 candidate JAR is 57,846 bytes with SHA-256
+The owner accepted the exact alpha.3 release-candidate JAR on 2026-08-30 after
+reviewing it in the combined 51-add-on BlueMap gallery. The JAR is 57,846 bytes
+with SHA-256
 `6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d`.
 Two clean Gradle 9.4.0 builds produced the same production JAR, sources JAR,
 POM, and module metadata bytes.

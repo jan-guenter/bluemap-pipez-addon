@@ -68,3 +68,17 @@ faces in Minecraft and BlueMap and approved the visual result.
 
 The disposable world, map, screenshots, and runtime logs may now be replaced
 by the next accepted add-on cycle under the shared staging policy.
+
+## Accepted BlueMap 5.23 migration
+
+The owner accepted the exact `0.1.0-alpha.3` release candidate on 2026-08-30
+after reviewing the combined All the Mons 1.2.0 BlueMap gallery. The tested
+source was commit `e7af5cf372face707187d8d9544a345dea1ed585`, tree
+`7c46a66dcd24b0ee37a667fba3fcd9fcf3b87e45`. Its 57,846-byte production JAR
+had SHA-256
+`6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d`.
+
+The combined suite passed all 51 add-ons on two distinct boots. Pipez passed
+56 checks with zero failures. The bounded render produced 589 fresh tiles
+across four regions. `provenance/release.json` records the exact evidence-file,
+runtime, candidate-manifest, and rendered-tile hashes.

@@ -1,12 +1,11 @@
 {
   "schema_version": 1,
-  "status": "unpublished-migration-candidate",
+  "status": "owner-accepted-release-candidate",
   "version": "0.1.0-alpha.3",
   "release_date": "2026-08-30",
   "repository": "https://github.com/jan-guenter/bluemap-pipez-addon",
   "tag": "v0.1.0-alpha.3",
   "maven_coordinate": "io.github.jan-guenter:bluemap-pipez-addon:0.1.0-alpha.3",
-  "published": false,
   "inherited_visual_acceptance": {
     "baseline_version": "0.1.0-alpha.2",
     "baseline_release_commit": "8b14c6ff8fff48ebf74dc87430184d522f37bf96",
@@ -16,7 +15,7 @@
     "original_visual_acceptance": true,
     "scope": "The exact Pipez profile, gallery, decoder, renderer, geometry, routing and fallback are unchanged. Alpha.3 moves the adapter boundary and shared face-light source to their BlueMap 5.23-only packages."
   },
-  "candidate_artifacts": {
+  "final_release_artifacts": {
     "production_jar": {
       "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.jar",
       "size": 57846,
@@ -41,6 +40,44 @@
       "file_name": "SHA256SUMS",
       "size": 440,
       "sha256": "ac19a8f3d01d9954f30cb4b12515c2b3f504f01b93db8f6c18f37ae538aa4390"
+    }
+  },
+  "owner_accepted_combined_integration": {
+    "accepted_at": "2026-08-30",
+    "visual_acceptance": true,
+    "evidence_bundle": "bluemap-atmons-integration-20260830-pipez-523-native",
+    "tested_source_commit": "e7af5cf372face707187d8d9544a345dea1ed585",
+    "tested_source_tree": "7c46a66dcd24b0ee37a667fba3fcd9fcf3b87e45",
+    "production_jar_size": 57846,
+    "production_jar_sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d",
+    "integration_summary": {
+      "file_size": 4282,
+      "sha256": "ecd77a581475a9c0322498d60c0e39ba60806b7689585aaf0287b57092d8494f",
+      "status": "passed",
+      "addon_count": 51,
+      "passed": 51,
+      "failed": 0
+    },
+    "candidate_override_lock_sha256": "8d879fdaf29484154f899e1b6c2774aa58391e7c09e8057c8a58b7b4fe5affff",
+    "candidate_manifest_sha256": "6d2e3dc69f2c1d4bed19211a6a37238b761088ee8e81d1ba1007927820427741",
+    "candidate_pack_inventory_sha256": "6e494c6c7ffdb0dbb9feec22fd97efdbae34befc5f0f2ae3b09e4c24ff6a9b4c",
+    "runtime_suite": {
+      "file_size": 75864,
+      "sha256": "5bd3a5d9183d333d46baf6539df26cc73c6eccabdce6a7e30ab98e54738d5b3a",
+      "first_boot_id": "b8d8b7ff-954b-4c91-895e-507ee8b03588",
+      "second_boot_id": "e38d9f3c-986c-46c1-bb10-291c39a5f16c",
+      "activation_markers_per_boot": 51,
+      "pipez_checks": 56,
+      "pipez_failures": 0
+    },
+    "runtime_attestation_sha256": "3c5dcb99092ef0b5398970feb17b9b2382cd43627e3a56205225619dbff148bb",
+    "render": {
+      "map_id": "atmons_integration",
+      "region_count": 4,
+      "fresh_tile_count": 589,
+      "fresh_tile_evidence_sha256": "c1ede06455f6ac2b6ac3c08113c349540e5fb4c4eadb562bbda7497a7fa85b4f",
+      "schedule_sha256": "8a5dfd0a9b0ee5df7b97f62065def5bf2de835c9895f150d26e8b2a24ca76a3a",
+      "agent_browser_sanity": true
     }
   },
   "exact_feature_backport_migration": {
@@ -100,6 +137,8 @@
     "exact_feature_backport_runtime_identity_gate": true,
     "gradle_9_4_clean_builds": 2,
     "same_toolchain_reproducibility_files": 4,
-    "hostile_gitlink_trust_probes": true
+    "hostile_gitlink_trust_probes": true,
+    "combined_integration_two_boot_gate": true,
+    "owner_visual_acceptance": true
   }
 }
