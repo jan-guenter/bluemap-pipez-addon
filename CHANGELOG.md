@@ -2,6 +2,19 @@
 
 All notable changes will be documented here.
 
+## 0.1.0-alpha.3 - 2026-08-30
+
+- Target only BlueMap feature-backport commit
+  `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac` and API commit
+  `285c9a60eff3ac2b0cab308ce1058d1565be0971`.
+- Move the local adapter boundary from `bluemap522` to `bluemap523`.
+- Compile the four shared bootstrap helpers from Adapter API `0.1.0-alpha.2`
+  and remove the duplicate local implementations.
+- Move transformed-face lighting to Render Core `0.1.0-alpha.2`'s
+  `bluemap523` package.
+- Keep the exact Pipez profile, gallery, renderer behavior, and stock fallback
+  unchanged.
+
 ## 0.1.0-alpha.2 - 2026-08-30
 
 - Compile the unchanged transformed-face lighting helper from the pinned

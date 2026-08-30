@@ -21,5 +21,6 @@ existing checkout with:
 
 ```bash
 git submodule update --init --recursive -- \
-  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core \
+  modules/bluemap-addon-adapter-api
 ```

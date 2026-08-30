@@ -10,10 +10,10 @@
     "java": 21
   },
   "bluemap": {
-    "backport_version": "5.22-agent.backport-5.22-mc1.21.1-2",
-    "backport_commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "feature_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "feature_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
     "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
-    "release_jar_sha256": "749f7647fa29764cea113114a7ab3259271bab3da22720989f2bd9fd1f3ba150",
+    "tested_jar_sha256": "86a0323d24f472e425dda4d4e6bba2d7d8ce8315ad009930a67131128c715e62",
     "declared_license": "MIT",
     "bundled": false
   },
@@ -47,16 +47,30 @@
     "status": "release-correlated-not-attested",
     "license_lane": "factual inspection only; source not copied or adapted"
   },
-  "shared_source_module": {
+  "shared_render_core_module": {
     "project": "BlueMap Add-on Render Core",
     "repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
-    "version": "0.1.0-alpha.1",
-    "tag": "v0.1.0-alpha.1",
-    "commit": "faf53c9586a2c876b5a91db5ae3c2650a98f19ba",
-    "source_tree": "73870b3976ad3a17bf4bf350d9531b66d3d4a3af",
+    "version": "0.1.0-alpha.2",
+    "tag": "v0.1.0-alpha.2",
+    "status": "released",
+    "commit": "24b84efdc8235f3f1323e1a8e9fd033080e3a79e",
+    "source_tree": "424040931680fb82d37693f893ca887c0ed48eae",
     "declared_license": "MIT",
-    "scope": "BlueMap 5.22 transformed-face lighting",
+    "scope": "BlueMap 5.23 feature-backport transformed-face lighting",
     "integration": "exact gitlink-pinned source compiled into the consumer",
+    "artifact_bundled": false
+  },
+  "shared_adapter_api_module": {
+    "project": "BlueMap Add-on Adapter API",
+    "repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
+    "version": "0.1.0-alpha.2",
+    "tag": "v0.1.0-alpha.2",
+    "status": "released",
+    "commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "declared_license": "MIT",
+    "scope": "BlueMapRuntimeCompatibility, RegistryGuard, ResourceExtensionType and SyntheticDispatch",
+    "integration": "exact gitlink-pinned sources compiled into the consumer",
     "artifact_bundled": false
   },
   "historical_discovery": {

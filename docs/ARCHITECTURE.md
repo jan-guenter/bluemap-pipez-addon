@@ -6,7 +6,7 @@ not a NeoForge mod and never loads Minecraft's client renderer.
 ```text
 BlueMap add-on entrypoint
         |
-exact BlueMap 5.22 internal-ABI adapter
+exact BlueMap 5.23 feature-backport internal-ABI adapter
         |
 exact Pipez artifact size/SHA-256 gate
         |
@@ -17,6 +17,8 @@ strict blockstate + six-byte-list snapshot
 stock installed core/arm models + installed extractor model
         |
 commit-pinned transformed-face lighting source
+        |
+commit-pinned adapter API sources
         |
 atomic original-resource fallback
 ```
@@ -58,8 +60,10 @@ custom variant completes.
 `FaceLighting` compiles from the exact pinned `bluemap-addon-render-core`
 source tree. It rotates each requested face through the model variant and
 samples the host and exposed neighbor for maximum sunlight, block light, and
-model emission. The module has no entrypoint or installed runtime. Geometry,
-resource access, and fallback remain in this add-on.
+model emission. Runtime identity checks, registry admission, the resource
+extension factory, and synthetic dispatch validation compile from the exact
+pinned `bluemap-addon-adapter-api` source tree. Neither module has an installed
+runtime. Geometry, resource access, and fallback remain in this add-on.
 
 Before custom output, the renderer records the tile-model and map-color start.
 Any failed decode or emission resets partial geometry and invokes the raw
@@ -70,6 +74,7 @@ block remains.
 
 The production JAR owns only its entrypoint, adapter/renderer code, synthetic
 dispatch blockstate, exact profile facts, and resource path/size/hash manifest.
-It also contains the one first-party MIT render-core source compiled into the
-consumer. BlueMap and all Minecraft/Pipez resources remain operator supplied.
-No module JAR is nested or installed.
+It also contains one first-party MIT render-core source and four first-party
+MIT adapter API sources compiled into the consumer. BlueMap and all
+Minecraft/Pipez resources remain operator supplied. No module JAR is nested or
+installed.
