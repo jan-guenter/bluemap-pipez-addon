@@ -59,6 +59,8 @@
     "module_tag": "v0.1.0-alpha.2",
     "module_release_commit": "24b84efdc8235f3f1323e1a8e9fd033080e3a79e",
     "module_source_tree": "424040931680fb82d37693f893ca887c0ed48eae",
+    "bluemap_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "bluemap_api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
     "compiled_source_count": 1,
     "source_package": "io.github.janguenter.bluemap.addon.render.core.adapter.bluemap523",
     "standalone_module_jar_bundled": false,
