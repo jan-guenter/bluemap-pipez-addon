@@ -45,11 +45,27 @@
   "owner_accepted_combined_integration": {
     "accepted_at": "2026-08-30",
     "visual_acceptance": true,
+    "acceptance_scope": "The owner accepted the combined-gallery visual result produced by the instrumented entrypoint overlay. This does not assert that the exact production JAR was installed for the runtime or visual gate.",
     "evidence_bundle": "bluemap-atmons-integration-20260830-pipez-523-native",
     "tested_source_commit": "e7af5cf372face707187d8d9544a345dea1ed585",
     "tested_source_tree": "7c46a66dcd24b0ee37a667fba3fcd9fcf3b87e45",
-    "production_jar_size": 57846,
-    "production_jar_sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d",
+    "base_release_candidate": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.3.jar",
+      "size": 57846,
+      "sha256": "6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d",
+      "entrypoint_class_sha256": "9629f3c3bb92687807b8be21407d1df684bd9c762d0cd5ad7968439628575f6f"
+    },
+    "staged_visual_artifact": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.1.jar",
+      "size": 57893,
+      "sha256": "70ffe682fb5319aadb5519a5846804a50cabbd0d86436542b4d2f3adbb75f149",
+      "gate_mode": "local-native-523-entrypoint-overlay",
+      "replaced_class": "io/github/janguenter/bluemap/pipez/BlueMapPipezAddon.class",
+      "replaced_class_sha256": "b5220fc59f372c044d1e786f11df9f143568c73a1eff9fadcca387a8d6cc6f77",
+      "replacement_source_sha256": "ddcc07ba01e7ddc582aaed83e724d1f26b5742465785af5019c4321000505cb3",
+      "purpose": "Add integration install-result validation and an activation marker."
+    },
+    "exact_production_jar_runtime_gate": false,
     "integration_summary": {
       "file_size": 4282,
       "sha256": "ecd77a581475a9c0322498d60c0e39ba60806b7689585aaf0287b57092d8494f",
@@ -139,6 +155,7 @@
     "same_toolchain_reproducibility_files": 4,
     "hostile_gitlink_trust_probes": true,
     "combined_integration_two_boot_gate": true,
-    "owner_visual_acceptance": true
+    "staged_overlay_owner_visual_acceptance": true,
+    "exact_production_jar_runtime_gate": false
   }
 }

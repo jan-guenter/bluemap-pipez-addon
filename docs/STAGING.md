@@ -69,16 +69,24 @@ faces in Minecraft and BlueMap and approved the visual result.
 The disposable world, map, screenshots, and runtime logs may now be replaced
 by the next accepted add-on cycle under the shared staging policy.
 
-## Accepted BlueMap 5.23 migration
+## Accepted BlueMap 5.23 visual result
 
-The owner accepted the exact `0.1.0-alpha.3` release candidate on 2026-08-30
-after reviewing the combined All the Mons 1.2.0 BlueMap gallery. The tested
-source was commit `e7af5cf372face707187d8d9544a345dea1ed585`, tree
-`7c46a66dcd24b0ee37a667fba3fcd9fcf3b87e45`. Its 57,846-byte production JAR
-had SHA-256
+The owner accepted the `0.1.0-alpha.3` visual result on 2026-08-30 after
+reviewing the combined All the Mons 1.2.0 BlueMap gallery. The base candidate
+came from commit `e7af5cf372face707187d8d9544a345dea1ed585`, tree
+`7c46a66dcd24b0ee37a667fba3fcd9fcf3b87e45`. Its production JAR was 57,846
+bytes with SHA-256
 `6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d`.
+
+The integration builder replaced `BlueMapPipezAddon.class` to add install
+validation and an activation marker. The gallery therefore ran a 57,893-byte
+instrumented overlay with SHA-256
+`70ffe682fb5319aadb5519a5846804a50cabbd0d86436542b4d2f3adbb75f149`,
+not the exact production JAR. The exact production artifact still needs the
+runtime portion of this release gate.
 
 The combined suite passed all 51 add-ons on two distinct boots. Pipez passed
 56 checks with zero failures. The bounded render produced 589 fresh tiles
-across four regions. `provenance/release.json` records the exact evidence-file,
-runtime, candidate-manifest, and rendered-tile hashes.
+across four regions. `provenance/release.json` records both artifact identities
+and the exact evidence-file, runtime, candidate-manifest, and rendered-tile
+hashes.

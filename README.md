@@ -27,12 +27,18 @@ Its corrected extractor-face mapping passed pull-request CI, the single
 37-anchor staging gate, and owner comparison between Minecraft and BlueMap on
 2026-08-12.
 
-The owner accepted the exact alpha.3 release-candidate JAR on 2026-08-30 after
-reviewing it in the combined 51-add-on BlueMap gallery. The JAR is 57,846 bytes
-with SHA-256
+The alpha.3 production JAR is 57,846 bytes with SHA-256
 `6e4d71baf9f7acc199ff94fe8fc887678bcde9224fb6ae49d3d228f3481e1d2d`.
 Two clean Gradle 9.4.0 builds produced the same production JAR, sources JAR,
 POM, and module metadata bytes.
+
+On 2026-08-30, the owner accepted the visual result in the combined 51-add-on
+BlueMap gallery. That run used the exact alpha.3 JAR as its base, then replaced
+the entrypoint class with an integration-instrumented version. The staged JAR
+was 57,893 bytes with SHA-256
+`70ffe682fb5319aadb5519a5846804a50cabbd0d86436542b4d2f3adbb75f149`.
+This visual acceptance does not claim that the exact production JAR passed the
+runtime gate.
 
 The candidate compiles transformed-face lighting from Render Core
 `0.1.0-alpha.2` and the four registry/runtime/extension helpers from Adapter

@@ -15,7 +15,7 @@ All notable changes will be documented here.
 - Keep the exact Pipez profile, gallery, renderer behavior, and stock fallback
   unchanged.
 - Record the combined 51-add-on, two-boot integration pass and owner visual
-  acceptance of the exact 57,846-byte release candidate.
+  acceptance of its instrumented entrypoint overlay.
 
 ## 0.1.0-alpha.2 - 2026-08-30
 
