@@ -2,6 +2,16 @@
 
 All notable changes will be documented here.
 
+## 0.1.0-alpha.2 - 2026-08-30
+
+- Compile the unchanged transformed-face lighting helper from the pinned
+  `bluemap-addon-render-core` source module.
+- Verify the module commit, source tree, gitlink, and clean checkout before
+  compilation.
+- Require exactly the shared `FaceLighting` classes in publication archives,
+  reject the former local package, and reject nested module JARs.
+- Preserve the exact Pipez profile, renderer behavior, and stock fallback.
+
 ## 0.1.0-alpha.1 - 2026-08-12
 
 - Add one exact All the Mons 1.2.0 profile for Pipez `1.21.1-1.2.31`.

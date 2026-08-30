@@ -14,6 +14,10 @@ base {
     archivesName = artifact_id
 }
 
+sourceSets {
+    main.java.srcDir 'modules/bluemap-addon-render-core/src/main/java'
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -85,6 +89,22 @@ tasks.named('sourcesJar', Jar).configure {
 
 def productionJar = tasks.named('jar', Jar).flatMap { it.archiveFile }
 def publishedSourcesJar = tasks.named('sourcesJar', Jar).flatMap { it.archiveFile }
+def sharedRenderCorePackage =
+        'io/github/janguenter/bluemap/addon/render/core/adapter/bluemap522/'
+def sharedRenderCoreClasses = [
+        "${sharedRenderCorePackage}FaceLighting.class",
+        "${sharedRenderCorePackage}FaceLighting\$Sample.class"
+].collect { it.toString() }
+def sharedRenderCoreSources = [
+        "${sharedRenderCorePackage}FaceLighting.java"
+].collect { it.toString() }
+def legacyFaceLightingClasses = [
+        'io/github/janguenter/bluemap/pipez/adapter/bluemap522/FaceLighting.class',
+        'io/github/janguenter/bluemap/pipez/adapter/bluemap522/FaceLighting$Sample.class'
+]
+def legacyFaceLightingSources = [
+        'io/github/janguenter/bluemap/pipez/adapter/bluemap522/FaceLighting.java'
+]
 tasks.register('verifyProductionJar') {
     dependsOn tasks.named('jar')
     inputs.file(productionJar)
@@ -104,10 +124,16 @@ tasks.register('verifyProductionJar') {
                     'META-INF/NOTICE-bluemap-pipez-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-pipez-addon.md',
                     'META-INF/bluemap-pipez/upstreams.json'
-            ]
+            ] + sharedRenderCoreClasses
             def missing = required.findAll { !entries.contains(it) }
-            if (!missing.isEmpty()) {
-                throw new GradleException("Production JAR is missing: ${missing}")
+            def duplicateShared = sharedRenderCoreClasses.findAll { shared ->
+                entries.count { it == shared } != 1
+            }
+            if (!missing.isEmpty() || !duplicateShared.isEmpty()) {
+                throw new GradleException(
+                        "Production JAR shared boundary mismatch: missing=${missing}, "
+                                + "nonUnique=${duplicateShared}"
+                )
             }
             def addon = new groovy.json.JsonSlurper().parseText(
                     zip.getInputStream(zip.getEntry('bluemap.addon.json')).getText('UTF-8')
@@ -117,6 +143,11 @@ tasks.register('verifyProductionJar') {
                     || addon.dependencies != []
                     || addon['soft-dependencies'] != []) {
                 throw new GradleException('BlueMap add-on metadata mismatch')
+            }
+            def foreignClasses = entries.findAll {
+                it.endsWith('.class')
+                        && !it.startsWith('io/github/janguenter/bluemap/pipez/')
+                        && !sharedRenderCoreClasses.contains(it)
             }
             def forbidden = entries.findAll {
                 it.endsWith('.jar')
@@ -128,9 +159,15 @@ tasks.register('verifyProductionJar') {
                         || it.startsWith('de/maxhenkel/')
                         || it.startsWith('net/minecraft/')
                         || it.startsWith('net/neoforged/')
+                        || legacyFaceLightingClasses.contains(it)
+                        || (it.startsWith(sharedRenderCorePackage)
+                            && !sharedRenderCoreClasses.contains(it))
             }
-            if (!forbidden.isEmpty()) {
-                throw new GradleException("Production JAR contains forbidden entries: ${forbidden}")
+            if (!foreignClasses.isEmpty() || !forbidden.isEmpty()) {
+                throw new GradleException(
+                        "Production JAR boundary mismatch: foreignClasses=${foreignClasses}, "
+                                + "forbidden=${forbidden}"
+                )
             }
         } finally {
             zip.close()
@@ -158,14 +195,21 @@ tasks.register('verifySourcesJar') {
                     'META-INF/NOTICE-bluemap-pipez-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-pipez-addon.md',
                     'META-INF/bluemap-pipez/upstreams.json'
-            ]
+            ] + sharedRenderCoreSources
             def missing = required.findAll { !entries.contains(it) }
-            if (!missing.isEmpty()) {
-                throw new GradleException("Sources JAR is missing: ${missing}")
+            def duplicateShared = sharedRenderCoreSources.findAll { shared ->
+                entries.count { it == shared } != 1
+            }
+            if (!missing.isEmpty() || !duplicateShared.isEmpty()) {
+                throw new GradleException(
+                        "Sources JAR shared boundary mismatch: missing=${missing}, "
+                                + "nonUnique=${duplicateShared}"
+                )
             }
             def projectJava = entries.findAll { it.endsWith('.java') }
             def foreignJava = projectJava.findAll {
                 !it.startsWith('io/github/janguenter/bluemap/pipez/')
+                        && !sharedRenderCoreSources.contains(it)
             }
             def forbidden = entries.findAll {
                 it.endsWith('.class')
@@ -175,6 +219,9 @@ tasks.register('verifySourcesJar') {
                         || it.startsWith('de/maxhenkel/')
                         || it.startsWith('net/minecraft/')
                         || it.startsWith('net/neoforged/')
+                        || legacyFaceLightingSources.contains(it)
+                        || (it.startsWith(sharedRenderCorePackage)
+                            && !sharedRenderCoreSources.contains(it))
             }
             if (projectJava.isEmpty() || !foreignJava.isEmpty() || !forbidden.isEmpty()) {
                 throw new GradleException(

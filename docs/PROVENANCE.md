@@ -3,6 +3,8 @@
 The evidence lock is machine-readable in
 `src/main/resources/bluemap-pipez/profiles/exact-artifacts.json`, the exact
 profile beside it, and `provenance/upstreams.json`.
+`provenance/release.json` separately binds the promoted consumer version to
+its exact publication files, accepted baseline, and source-module migration.
 
 The All the Mons 1.2.0 client export manifest identifies CurseForge
 project/file `443900/8351631`. Its runtime ledger names
@@ -37,3 +39,11 @@ ordinary JSON emitter were seeded from this owner's independently authored MIT
 `a75b1d82c3987fa9360a1e8a5910eedf90aca7cb`. No Sophisticated profile,
 family-specific decoder/renderer/catalog, resource fact, or observation was
 carried into Pipez.
+
+Version `0.1.0-alpha.2` source-bundles the unchanged `FaceLighting` class from
+the first-party MIT `bluemap-addon-render-core` `0.1.0-alpha.1` release at
+commit `faf53c9586a2c876b5a91db5ae3c2650a98f19ba`, source tree
+`73870b3976ad3a17bf4bf350d9531b66d3d4a3af`. The module records the canonical
+Sophisticated origin and all seven byte-identical portfolio copies. Its JAR is
+neither installed nor nested. Pipez profile facts, decoding, geometry,
+routing, and fallback remain local.

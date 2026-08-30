@@ -7,7 +7,8 @@ Pipez connections and extractor plates.
 
 ## Status and compatibility
 
-Version `0.1.0-alpha.1` is the owner-accepted prerelease for one environment:
+Version `0.1.0-alpha.2` is a source-consolidation candidate for the same exact
+environment as the owner-accepted `0.1.0-alpha.1` release:
 
 - All the Mons `1.2.0`, Minecraft `1.21.1`, NeoForge `21.1.248`, Java `21`;
 - BlueMap backport `5.22-agent.backport-5.22-mc1.21.1-2` at
@@ -19,11 +20,16 @@ The runtime activates only for those exact Pipez bytes. A same-named or
 same-version file with a different size or SHA-256 remains on BlueMap's stock
 resource path.
 
-The accepted production JAR is 53,921 bytes with SHA-256
+The `0.1.0-alpha.1` accepted production JAR is 53,921 bytes with SHA-256
 `e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db`.
 Its corrected extractor-face mapping passed pull-request CI, the single
 37-anchor staging gate, and owner comparison between Minecraft and BlueMap on
 2026-08-12.
+
+The candidate changes source ownership only. It compiles transformed-face
+light sampling from the commit-pinned `bluemap-addon-render-core` source
+module. Pipe decoding, model emission, routing, fallback, and installed
+resource use remain local and unchanged.
 
 ## Visual scope
 
@@ -62,15 +68,17 @@ git clone --recurse-submodules \
   https://github.com/jan-guenter/bluemap-pipez-addon.git
 ```
 
-For an existing clone, initialize the pinned development toolkit before
-running Gradle:
+For an existing clone, initialize the pinned development toolkit and
+render-core source module before running Gradle:
 
 ```bash
-git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core
 ```
 
-The settings preflight accepts only the committed toolkit gitlink at its exact
-expected commit and rejects an uninitialized, changed, or dirty submodule.
+The settings preflight accepts only the committed toolkit and render-core
+gitlinks. It rejects an uninitialized, changed, dirty, incorrectly pinned, or
+source-tree-mismatched checkout.
 
 ```bash
 gradle --no-daemon \
@@ -81,7 +89,8 @@ gradle --no-daemon \
 
 Pull-request CI reacquires the JAR ephemerally from its exact Modrinth version,
 verifies every digest, metadata, Java level, and 28-path resource closure, and
-discards it. The build never bundles or redistributes Pipez bytes.
+discards it. The build compiles one first-party MIT render-core source and
+bundles no module JAR or Pipez bytes.
 
 Tagged releases publish production/source JARs, POM, module metadata, and
 checksums on GitHub Releases and at Maven coordinates

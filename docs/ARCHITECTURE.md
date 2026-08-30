@@ -16,6 +16,8 @@ strict blockstate + six-byte-list snapshot
         |
 stock installed core/arm models + installed extractor model
         |
+commit-pinned transformed-face lighting source
+        |
 atomic original-resource fallback
 ```
 
@@ -53,6 +55,12 @@ arm boolean because the exact client renderer has that behavior. BlueMap's
 outer blockstate renderer supplies water for `waterlogged=true` after the
 custom variant completes.
 
+`FaceLighting` compiles from the exact pinned `bluemap-addon-render-core`
+source tree. It rotates each requested face through the model variant and
+samples the host and exposed neighbor for maximum sunlight, block light, and
+model emission. The module has no entrypoint or installed runtime. Geometry,
+resource access, and fallback remain in this add-on.
+
 Before custom output, the renderer records the tile-model and map-color start.
 Any failed decode or emission resets partial geometry and invokes the raw
 installed Pipez blockstate through BlueMap's stock renderer. No half-custom
@@ -62,5 +70,6 @@ block remains.
 
 The production JAR owns only its entrypoint, adapter/renderer code, synthetic
 dispatch blockstate, exact profile facts, and resource path/size/hash manifest.
-BlueMap and all Minecraft/Pipez resources remain operator supplied. This keeps
-the project clean-room MIT despite Pipez's All-rights-reserved declaration.
+It also contains the one first-party MIT render-core source compiled into the
+consumer. BlueMap and all Minecraft/Pipez resources remain operator supplied.
+No module JAR is nested or installed.

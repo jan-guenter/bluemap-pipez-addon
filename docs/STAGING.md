@@ -56,8 +56,8 @@ required.
 
 ## Accepted result
 
-The owner accepted the corrected result on 2026-08-12. The exact staged
-production JAR was 53,921 bytes with SHA-256
+The owner accepted the corrected `0.1.0-alpha.1` result on 2026-08-12. The
+exact staged production JAR was 53,921 bytes with SHA-256
 `e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db`.
 It loaded exactly once without a targeted fault, the deterministic gallery
 verified 37/37 anchors, and the bounded purge/render completed. A subsequent

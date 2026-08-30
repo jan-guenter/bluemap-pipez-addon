@@ -20,7 +20,9 @@ mod file is a fresh evidence, implementation, and review task.
 
 - The production JAR is a plain BlueMap add-on loaded from BlueMap's packs
   directory. It contains no NeoForge metadata, Mixins, nested JARs, client
-  bootstrap, or third-party classes/assets.
+  bootstrap, or third-party classes/assets. It compiles the exact pinned
+  first-party render-core source into the add-on instead of nesting or
+  installing the module JAR.
 - The exact five-block catalog is `item_pipe`, `fluid_pipe`, `energy_pipe`,
   `universal_pipe`, and `gas_pipe` in the `pipez` namespace.
 - Preserve stable cores, connected arms, persisted extractor plates,
@@ -38,7 +40,8 @@ Develop in one coherent tranche. Pull-request CI is the authoritative full
 build and exact-input gate; do not repeat it locally after small edits:
 
 ```bash
-git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core
 gradle --no-daemon \
   -PpipezJar=/absolute/path/pipez-neoforge-1.21.1-1.2.31.jar \
   clean check build generatePomFileForAddonPublication \

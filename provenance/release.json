@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "owner-accepted-release-candidate",
+  "version": "0.1.0-alpha.2",
+  "release_date": "2026-08-30",
+  "repository": "https://github.com/jan-guenter/bluemap-pipez-addon",
+  "tag": "v0.1.0-alpha.2",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-pipez-addon:0.1.0-alpha.2",
+  "owner_accepted_baseline": {
+    "version": "0.1.0-alpha.1",
+    "release_commit": "fa3e773a7d1b7e9af52277bf104e70f704b0bb2a",
+    "production_jar_size": 53921,
+    "production_jar_sha256": "e81dea280d08e19ea4602e5a0700f4ab7004ca74e3408bfba3a898cb745e67db",
+    "gallery_archive_size": 3504,
+    "gallery_archive_sha256": "08f1de94a139ae0910a755cdcdf9f59c4c3faef03f00cdbbce91b7532245efd2",
+    "visual_acceptance": true
+  },
+  "final_release_artifacts": {
+    "production_jar": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.jar",
+      "size": 55373,
+      "sha256": "73d27be8dac93b1cccd619ed0bc560847e636b175199ae1a8509b092228384c3"
+    },
+    "sources_jar": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2-sources.jar",
+      "size": 31288,
+      "sha256": "27ca39580b4dc84fe2215137db31e282449595456176c399f2efee89f9e679a9"
+    },
+    "pom": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.pom",
+      "size": 1339,
+      "sha256": "8d970a81c7b811661707ad3ddd116cde4a814872cce505798e927d3f76ddf84a"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-pipez-addon-0.1.0-alpha.2.module.json",
+      "size": 2803,
+      "sha256": "cebe346c50698a0e4aa2b2a4126eb457bc2090cebf87b4763fd3178df847c287"
+    },
+    "sha256sums": {
+      "file_name": "SHA256SUMS",
+      "size": 440,
+      "sha256": "6a5c3edb86142b05d64033e19932e89d47c650aeb9d593dd8f57ad0c1a5d6985"
+    }
+  },
+  "render_core_module_migration": {
+    "baseline_version": "0.1.0-alpha.1",
+    "repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
+    "version": "0.1.0-alpha.1",
+    "tag": "v0.1.0-alpha.1",
+    "commit": "faf53c9586a2c876b5a91db5ae3c2650a98f19ba",
+    "source_tree": "73870b3976ad3a17bf4bf350d9531b66d3d4a3af",
+    "normalized_face_lighting_bytecode_exact": true,
+    "package_normalized_caller_bytecode_exact": true,
+    "gallery_byte_identical": true,
+    "behavior_change": false
+  },
+  "verification": {
+    "exact_input_gate": true,
+    "archive_boundary_gate": true,
+    "same_toolchain_reproducibility": true,
+    "module_trust_probes": true
+  }
+}

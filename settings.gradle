@@ -3,8 +3,13 @@
 pluginManagement {
     def toolkitPath = 'tooling/bluemap-addon-toolkit'
     def expectedToolkitCommit = '6cd34a8368cc4ee8628fbe830a90ec5b14960629'
+    def renderCorePath = 'modules/bluemap-addon-render-core'
+    def expectedRenderCoreCommit = 'faf53c9586a2c876b5a91db5ae3c2650a98f19ba'
+    def expectedRenderCoreSourceTree = '73870b3976ad3a17bf4bf350d9531b66d3d4a3af'
     def consumerRoot = settings.settingsDir
     def toolkit = new File(consumerRoot, toolkitPath)
+    def renderCore = new File(consumerRoot, renderCorePath)
+    def renderCoreSource = new File(renderCore, 'src/main/java')
 
     if (!(expectedToolkitCommit ==~ /[0-9a-f]{40}/)
             || !new File(consumerRoot, '.git').exists()
@@ -13,6 +18,16 @@ pluginManagement {
         throw new GradleException(
                 'Toolkit trust preflight is not configured or initialized. '
                         + "Run: git submodule update --init --recursive -- ${toolkitPath}"
+        )
+    }
+    if (!(expectedRenderCoreCommit ==~ /[0-9a-f]{40}/)
+            || !(expectedRenderCoreSourceTree ==~ /[0-9a-f]{40}/)
+            || !renderCore.isDirectory()
+            || !new File(renderCore, '.git').exists()
+            || !renderCoreSource.isDirectory()) {
+        throw new GradleException(
+                'Render-core trust preflight is not configured or initialized. '
+                        + "Run: git submodule update --init --recursive -- ${renderCorePath}"
         )
     }
 
@@ -58,6 +73,39 @@ pluginManagement {
              '--ignore-submodules=none'], 'verify the toolkit worktree')
     if (toolkitHead != expectedToolkitCommit || !toolkitStatus.isEmpty()) {
         throw new GradleException('Toolkit HEAD differs from the gitlink or is dirty')
+    }
+
+    def renderCoreTree = gitOutput(consumerRoot,
+            ['ls-tree', 'HEAD', '--', renderCorePath],
+            'read the committed render-core gitlink').tokenize(' \t')
+    def renderCoreIndex = gitOutput(consumerRoot,
+            ['ls-files', '--stage', '--', renderCorePath],
+            'read the indexed render-core gitlink').tokenize(' \t')
+    if (renderCoreTree.size() != 4 || renderCoreTree[0] != '160000'
+            || renderCoreTree[1] != 'commit'
+            || renderCoreTree[2] != expectedRenderCoreCommit
+            || renderCoreTree[3] != renderCorePath
+            || renderCoreIndex.size() != 4 || renderCoreIndex[0] != '160000'
+            || renderCoreIndex[1] != expectedRenderCoreCommit
+            || renderCoreIndex[2] != '0' || renderCoreIndex[3] != renderCorePath) {
+        throw new GradleException(
+                'Committed/indexed render-core gitlink does not match its pin'
+        )
+    }
+
+    def renderCoreHead = gitOutput(renderCore,
+            ['rev-parse', '--verify', 'HEAD^{commit}'], 'read render-core HEAD')
+    def renderCoreTreeHash = gitOutput(renderCore,
+            ['rev-parse', 'HEAD:src/main/java'], 'read render-core source tree')
+    def renderCoreStatus = gitOutput(renderCore,
+            ['status', '--porcelain=v1', '--untracked-files=all',
+             '--ignore-submodules=none'], 'verify the render-core worktree')
+    if (renderCoreHead != expectedRenderCoreCommit
+            || renderCoreTreeHash != expectedRenderCoreSourceTree
+            || !renderCoreStatus.isEmpty()) {
+        throw new GradleException(
+                'Render-core HEAD/source tree differs from the pin or is dirty'
+        )
     }
 
     def gradleBuild = new File(toolkit, 'gradle')
