@@ -3,6 +3,8 @@
 The evidence lock is machine-readable in
 `src/main/resources/bluemap-pipez/profiles/exact-artifacts.json`, the exact
 profile beside it, and `provenance/upstreams.json`.
+`provenance/release.json` separately binds the promoted consumer version to
+its exact publication files, accepted baseline, and source-module migration.
 
 The All the Mons 1.2.0 client export manifest identifies CurseForge
 project/file `443900/8351631`. Its runtime ledger names
